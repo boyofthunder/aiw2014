@@ -1,900 +1,616 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="description" content="" >
-	<meta name="author" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Homepage - Daily News </title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<!--[if lt IE 9]>
-		<script src="js/html5shiv.js"></script>
-	<![endif]-->
-
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>RankStar - Your No.1 Website for Rank Tracking</title>
+		<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+		<link rel="shortcut icon" href="images/chart_area_up.png" />	
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="js/jquery.min.js"></script>
+		 <!---- start-smoth-scrolling---->
+		<script type="text/javascript" src="js/move-top.js"></script>
+		<script type="text/javascript" src="js/easing.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+		 <!-- Custom Theme files -->
+		<link href="css/style.css" rel='stylesheet' type='text/css' />
+   		 <!-- Custom Theme files -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		</script>
+		<!----webfonts---->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700' rel='stylesheet' type='text/css'>
+		<!----//webfonts---->
+		<!----start-top-nav-script---->
+		<script>
+			$(function() {
+				var pull 		= $('#pull');
+					menu 		= $('nav ul');
+					menuHeight	= menu.height();
+				$(pull).on('click', function(e) {
+					e.preventDefault();
+					menu.slideToggle();
+				});
+				$(window).resize(function(){
+	        		var w = $(window).width();
+	        		if(w > 320 && menu.is(':hidden')) {
+	        			menu.removeAttr('style');
+	        		}
+	    		});
+			});
+		</script>
+		<!----//End-top-nav-script---->
 </head>
-
-<body>
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-
-
-
-<header id="ccr-header">
-	<section id="ccr-nav-top" class="fullwidth">
-		<div class="">
-			<div class="container">
-				<nav class="top-menu">
-					<ul class="left-top-menu">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="#">Site Map</a></li>
-						<li><a href="contact.html">Contact</a></li>
-					</ul><!-- /.left-top-menu -->
-
-					<ul class="right-top-menu pull-right">
-						<li><a href="#">Login</a></li>
-						<li><a href="#">Register</a></li>
-						<li><a href="#">Subscribe</a></li>
-						<li>
-							<form class="form-inline" role="form" action="#">
-								<input type="search" placeholder="Search here..." required>
-								  <button type="submit"><i class="fa fa-search"></i></button>
-							</form>
-						</li>
-					</ul> <!--  /.right-top-menu -->
-				</nav> <!-- /.top-menu -->
+	<body>
+		<!-----start-container----->
+		<!-----header-section------>
+		<div class="header-section">
+			<!----- start-header---->
+			<div id="home" class="header">
+				<div class="container">
+					<div class="top-header">
+						<div class="logo">
+							<a href="#"><img src="images/logo.png" title="logo" /></a>
+						</div>
+						<!----start-top-nav---->
+						 <nav class="top-nav">
+							<ul class="top-nav">
+								<li class="active"><a href="#home" class="scroll">Home </a></li>
+								<li class="page-scroll"><a href="#fea" class="scroll">FEATURES</a></li>
+								<li class="page-scroll"><a href="#gallery" class="scroll">Gallery</a></li>
+								<li class="page-scroll"><a href="#about" class="scroll">About </a></li>
+								<li class="contatct-active" class="page-scroll"><a href="#contact" class="scroll">Contact</a></li>
+							</ul>
+							<a href="#" id="pull"><img src="images/nav-icon.png" title="menu" /></a>
+						</nav>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
 			</div>
-		</div>	
-	</section> <!--  /#ccr-nav-top  -->
-
-
-	
-	<section id="ccr-site-title">
-		<div class="container">
-			<div class="site-logo">
-				<a href="index.html" class="navbar-brand">
-					<img src="img/logo.png" alt="Side Logo" />
-						<h1>Daily <span>News</span></h1>
-						<h3>The Daily News Source</h3>
-				</a>
-			</div> <!-- / .navbar-header -->
-
-			<div class="add-space">
-				728 x 90 px Banner
-			</div> <!-- / .adspace -->
-
-		</div>	<!-- /.container -->
-	</section> <!-- / #ccr-site-title -->
-
-
-
-	<section id="ccr-nav-main">
-		<nav class="main-menu">
-			<div class="container">
-
-				<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".ccr-nav-main">
-				            <i class="fa fa-bars"></i>
-			          	</button> <!-- /.navbar-toggle -->
-				</div> <!-- / .navbar-header -->
-
-				<div class="collapse navbar-collapse ccr-nav-main">
-					<ul class="nav navbar-nav">
-						<li><a class="active" href="index.html">Home</a></li>
-						<li class="dropdown">
-							<a href="#">Blog <i class="fa fa-caret-down"></i></a>
-							<ul class="sub-menu">
-					          	<li><a href="blog.html">Blog 1</a></li>
-					          	<li><a href="blog-2.html">Blog 2</a></li>
-							  	<li><a href="blog-3.html">Blog 3</a></li>
-					        </ul><!-- /.sub-menu -->
-						</li><!-- /.dropdown -->
-						<li><a href="single.html">Single</a></li>
-						<li><a href="contact.html">Contact</a></li>
-						<li class="dropdown"><a href="#">Category <i class="fa fa-caret-down"></i></a>
-							<ul class="sub-menu">
-								<li><a href="category-1.html">Category 1</a></li>
-								<li><a href="category-2.html">Category 2</a></li>
-								<li><a href="#">More <i class="fa fa-caret-right"></i></a>
-									<ul class="sub-menu-2">
-										<li><a href="#">Demo Link 1</a></li>
-										<li><a href="#">Demo Link 2</a></li>
-										
-										<li><a href="#">More <i class="fa fa-caret-right"></i></a>
-											<ul class="sub-menu-3">
-												<li><a href="#">Demo Link 1</a></li>
-												<li><a href="#">Demo Link 2</a></li>
-												<li><a href="#">Demo Link 3</a></li>
-											</ul><!-- /.sub-menu-3 -->
-										</li>
-										<li><a href="#">Demo Link 3</a></li>
-									</ul><!-- /.sub-menu-2 -->
-								</li>
-							</ul><!-- /.sub-menu -->
-						</li><!--  /.dropdown -->
-						<li><a href="404.html">404</a></li>
-					</ul> <!-- /  .nav -->
-				</div><!-- /  .collapse .navbar-collapse  -->
-
-				<div id="currentTime" class="pull-right current-time">
-					<i class="fa fa-clock-o"></i> 12:10 pm
-
-
-				</div><!-- / #currentTime -->
-
-			</div>	<!-- /.container -->
-		</nav> <!-- /.main-menu -->
-	</section> <!-- / #ccr-nav-main -->
-
-
-
-	<section id="ccr-nav-below-main">
-		<nav class="second-menu">
-			<div class="container">
-
-				<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".ccr-nav-below-main">
-				            <i class="fa fa-bars"></i>
-			          	</button> <!-- /.navbar-toggle -->
-				</div> <!-- / .navbar-header -->
-
-				<div class="collapse navbar-collapse ccr-nav-below-main">
-					<ul class="nav navbar-nav">
-						<li><a href="#">Europe</a></li>
-						<li><a href="#">USA</a></li>
-						<li><a href="#">Middle East</a></li>
-						<li><a href="#">Social and IT</a></li>
-						<li><a href="#">Culture</a></li>
-					</ul> <!-- /.nav /.navbar-nav -->
-				</div>
-
-				<div class="ccr-language">
-					<ul> 
-						<li>Language:</li>
-						<li><a href="#"><img src="img/uk.png" alt="UK">English</a></li>
-						<li><a href="#"><img src="img/france.png" alt="France">France</a></li><li>
-						<a href="#"><img src="img/garman.png" alt="Garman">Garman</a></li>
-					</ul>
-				</div> <!-- /.ccr-language -->
-			</div><!-- /.container -->
-		</nav><!-- /.second-menu -->
-	</section><!-- / #ccr-nav-below-main -->
-
-</header> <!-- /#ccr-header -->
-
-
-
-<section id="ccr-main-section">
-	<div class="container">
-
-
-		<section id="ccr-left-section" class="col-md-8">
-
+			<!----- //End-header---->
+			<!----- start-slider---->
+			<!----start-slider-script---->
+			<script src="js/responsiveslides.min.js"></script>
+			 <script>
+			    // You can also use "$(window).load(function() {"
+			    $(function () {
+			      // Slideshow 4
+			      $("#slider4").responsiveSlides({
+			        auto: true,
+			        pager: true,
+			        nav: true,
+			        speed: 500,
+			        namespace: "callbacks",
+			        before: function () {
+			          $('.events').append("<li>before event fired.</li>");
+			        },
+			        after: function () {
+			          $('.events').append("<li>after event fired.</li>");
+			        }
+			      });
 			
-
-			<div class="ccr-last-update">
-				<div class="update-ribon">Last Update</div> <!-- /.update-ribon -->
-				<span class="update-ribon-right"></span> <!-- /.update-ribon-left -->
-				<div class="update-news-text" id="update-news-text">
-						<ul id="latestUpdate">  
-						    <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-						    <li><a href="#">Two</a></li>
-						    <li><a href="#">Three</a></li>
-						    <li><a href="#">Four</a></li>
-						    <li><a href="#">Five</a></li>
+			    });
+			  </script>
+			<!----//End-slider-script---->
+			<!-- Slideshow 4 -->
+			    <div  id="top" class="callbacks_container">
+			      <ul class="rslides" id="slider4">
+			        <li>
+			          <img src="images/slide.jpg" alt="">
+			          <div class="caption text-center">
+			          	<div class="slide-text-info">
+			          		<h1>Introducing <span>RankStar.</span></h1>
+			          		<h2>Made to modify and use anywhere</h2>
+			          		<div class="slide-text">
+			          			<ul>
+			          				<li><span> </span>Track your Website Rank</li>
+			          				<li><span> </span>Improve your results </li>
+			          				<li><span> </span>Make lots of money</li>
+			          			</ul>
+			          		</div>
+			          		<div class="clearfix"> </div>
+			          		<div class="big-btns">
+			          			<a class="download" href="#"><label> </label>Login</a>
+			          			<a class="view" href="#"><label> </label>Register</a>
+			          		</div>
+			          	</div>
+			          </div>
+			        </li>
+			        <li>
+			          <img src="images/slide.jpg" alt="">
+			          <div class="caption text-center">
+			          	<div class="slide-text-info">
+			          		<h1>Introducing <span>Most Popular.</span></h1>
+			          		<h2>Made to modify and use anywhere</h2>
+			          		<div class="slide-text">
+			          			<ul>
+			          				<li><span> </span>Recommended by Google </li>
+			          				<li><span> </span>Most Visited Website in 2020 </li>
+			          				<li><span> </span>Loved by Everyone</li>
+			          			</ul>
+			          		</div>
+			          		<div class="clearfix"> </div>
+			          		<div class="big-btns">
+			          			<a class="download" href="#"><label> </label>Login</a>
+			          			<a class="view" href="#"><label> </label>Register</a>
+			          		</div>
+			          	</div>
+			          </div>
+			        </li>
+			        <li>
+			          <img src="images/slide.jpg" alt="">
+			          <div class="caption text-center">
+			          	<div class="slide-text-info">
+			          		<h1>Introducing <span>Best Website.</span></h1>
+			          		<h2>Made to modify and use anywhere</h2>
+			          		<div class="slide-text">
+			          			<ul>
+			          				<li><span> </span>Compatible with any Device </li>
+			          				<li><span> </span>Simply the Best </li>
+			          				<li><span> </span>Nothing can Compare</li>
+			          			</ul>
+			          		</div>
+			          		<div class="clearfix"> </div>
+			          		<div class="big-btns">
+			          			<a class="download" href="#"><label> </label>Login</a>
+			          			<a class="view" href="#"><label> </label>Register</a>
+			          		</div>
+			          	</div>
+			          </div>
+			        </li>
+			        <li>
+			          <img src="images/slide.jpg" alt="">
+			           <div class="caption text-center">
+			           <div class="slide-text-info">
+			          		<h1>Introducing <span>Amazing app.</span></h1>
+			          		<h2>Made to modify and use anywhere</h2>
+			          		<div class="slide-text">
+			          			<ul>
+			          				<li><span> </span>More Amazing than the Amazing Spiderman </li>
+			          				<li><span> </span>Approved by Kim K </li>
+			          				<li><span> </span>#BreakTheInternet</li>
+			          			</ul>
+			          		</div>
+			          		<div class="clearfix"> </div>
+			          		<div class="big-btns">
+			          				<a class="download" href="#"><label> </label>Login</a>
+			          				<a class="view" href="#"><label> </label>Register</a>
+			          		</div>
+			          	</div>
+			          </div>
+			        </li>
+			      </ul>
+			    </div>
+			    <div class="clearfix"> </div>
+			    <!-----device----->
+			    	<div class="device-demo">
+			    		<img src="images/device-in-hand.png" title="demo" />
+			    	</div>
+			    <!---//device----->
+			<!----- //End-slider---->
+			</div>
+			<!-----//header-section----->
+			<!----features----->
+			<div id="fea" class="features">
+				<div class="container">
+					<div class="section-head text-center">
+						<h3><span class="frist"> </span>AMAZING FEATURES<span class="second"> </span></h3>
+						<p>RankStar has everything that you are looking for in a rank tracking website and more!</p>
+					</div>
+					<!----features-grids----->
+					<div class="features-grids">
+						<div class="col-md-4 features-grid">
+							<div class="features-grid-info">
+								<div class="col-md-2 features-icon">
+									<span class="f-icon0"> </span>
+								</div>
+								<div class="col-md-10 features-info">
+									<h4>Graphs</h4>
+									<p>Display your website ranking in beautiful graphs</p>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="features-grid-info">
+								<div class="col-md-2 features-icon">
+									<span class="f-icon1"> </span>
+								</div>
+								<div class="col-md-10 features-info">
+									<h4>Comparing Results</h4>
+									<p>Compare the results of multiple websites based on the same keyword</p>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="features-grid-info">
+								<div class="col-md-2 features-icon">
+									<span class="f-icon2"> </span>
+								</div>
+								<div class="col-md-10 features-info">
+									<h4>Keywords Marking</h4>
+									<p>Mark popular keywords for easy tracking</p>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							
+						</div><!---end-features-grid---->
+						<div class="col-md-4 features-grid">
+							<div class="big-device">
+								<img src="images/device.png" title="features-demo" />
+							</div>
+						</div><!---end-features-grid---->
+						<div class="col-md-4 features-grid">
+							<div class="features-grid-info">
+								<div class="col-md-2 features-icon1">
+									<span class="f-icon3"> </span>
+								</div>
+								<div class="col-md-10 features-info">
+									<h4>Keywords Register</h4>
+									<p>Register more keywords with less money</p>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="features-grid-info">
+								<div class="col-md-2 features-icon1">
+									<span class="f-icon4"> </span>
+								</div>
+								<div class="col-md-10 features-info">
+									<h4>Free!!</h4>
+									<p>Our website is totally free, just sign up and enjoy the service</p>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="features-grid-info">
+								<div class="col-md-2 features-icon1">
+									<span class="f-icon5"> </span>
+								</div>
+								<div class="col-md-10 features-info">
+									<h4>We need you!</h4>
+									<p>Donate money so our website can function properly</p>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							
+						</div><!---end-features-grid---->
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+					<!----//features-grids----->
+					<!----//features----->
+					<!----screen-shot-gallery---->
+					<div id="gallery" class="screen-shot-gallery">
+						<div class="container">
+							<div class="section-head text-center">
+								<h3><span class="frist"> </span>SCREENSHOTS GALLERY<span class="second"> </span></h3>
+								<p>Preview of our awesome features!</p>
+							</div>
+						</div>
+						<!----sreen-gallery-cursual---->
+						<div class="sreen-gallery-cursual">
+							 <!-- requried-jsfiles-for owl -->
+							<link href="css/owl.carousel.css" rel="stylesheet">
+							    <script src="js/owl.carousel.js"></script>
+							        <script>
+							    $(document).ready(function() {
+							      $("#owl-demo").owlCarousel({
+							        items : 3,
+							        lazyLoad : true,
+							        autoPlay : true,
+							      });
+							    });
+							    </script>
+							 <!-- //requried-jsfiles-for owl -->
+							 <!-- start content_slider -->
+							 <div class="container">
+						       <div id="owl-demo" class="owl-carousel">
+					                <div class="item">
+					                	<img class="lazyOwl" data-src="images/screen.jpg" alt="screen-name">
+					                </div>
+					                <div class="item">
+					                	<img class="lazyOwl" data-src="images/screen.jpg" alt="screen-name">
+					                </div>
+					                <div class="item">
+					                	<img class="lazyOwl" data-src="images/screen.jpg" alt="screen-name">
+					                </div>
+					                <div class="item">
+					                	<img class="lazyOwl" data-src="images/screen.jpg" alt="screen-name">
+					                </div>
+					                <div class="item">
+					                	<img class="lazyOwl" data-src="images/screen.jpg" alt="screen-name">
+					                </div>
+					                <div class="item">
+					                	<img class="lazyOwl" data-src="images/screen.jpg" alt="screen-name">
+					                </div>
+					                <div class="item">
+					                	<img class="lazyOwl" data-src="images/screen.jpg" alt="screen-name">
+					                </div>
+					                <div class="item">
+					                	<img class="lazyOwl" data-src="images/screen.jpg" alt="screen-name">
+					                </div>
+				              </div>
+						</div>
+						<!--//sreen-gallery-cursual---->
+					</div>
+				</div>
+				<!--//screen-shot-gallery---->
+				
+				<!----team---->
+				<div id="about" class="team">
+					<div class="container">
+						<div class="section-head text-center">
+							<h3><span class="frist"> </span>PEOPLE BEHIND THE WEBSITE<span class="second"> </span></h3>
+							<p>These people are awesome, give them a kiss!</p>
+						</div>
+					</div>
+					<!----team-members---->
+					<div class="team-members">
+						<div class="container">
+							<div class="col-md-3 team-member">
+								<div class="team-member-info">
+									<img class="member-pic" src="images/team-member4.jpg" title="name" />
+									<h5><a href="#">Nguyen Quang Ha</a></h5>
+									<span>Lead Designer</span>
+									<label class="team-member-caption text-center">
+										<p>Drink all day Party all night</p>
+										<ul>
+											<li><a class="t-twitter" href="https://twitter.com/Boyofthunder26"><span> </span></a></li>
+											<li><a class="t-facebook" href="https://www.facebook.com/boyofthunder"><span> </span></a></li>
+											<li><a class="t-googleplus" href="https://plus.google.com/+HàBoyofthunder"><span> </span></a></li>
+											<div class="clearfix"> </div>
+										</ul>
+									</label>
+								</div>
+							</div><!--- end-team-member --->
+							<div class="col-md-3 team-member">
+								<div class="team-member-info">
+									<img class="member-pic" src="images/team-member1.jpg" title="name" />
+									<h5><a href="#">Tran Vu Long</a></h5>
+									<span>Lead Developer</span>
+									<label class="team-member-caption text-center">
+										<p>Coolest Bartender of all time</p>
+										<ul>
+											<li><a class="t-twitter" href="#"><span> </span></a></li>
+											<li><a class="t-facebook" href="https://www.facebook.com/long.trum"><span> </span></a></li>
+											<li><a class="t-googleplus" href="#"><span> </span></a></li>
+											<div class="clearfix"> </div>
+										</ul>
+									</label>
+								</div>
+							</div><!--- end-team-member --->
+							<div class="col-md-3 team-member">
+								<div class="team-member-info">
+									<img class="member-pic" src="images/team-member2.jpg" title="name" />
+									<h5><a href="#">Nguyen Hai Anh</a></h5>
+									<span>Artist</span>
+									<label class="team-member-caption text-center">
+										<p>I'm Fabulous!</p>
+										<ul>
+											<li><a class="t-twitter" href="#"><span> </span></a></li>
+											<li><a class="t-facebook" href="https://www.facebook.com/haris.sunbae"><span> </span></a></li>
+											<li><a class="t-googleplus" href="#"><span> </span></a></li>
+											<div class="clearfix"> </div>
+										</ul>
+									</label>
+								</div>
+							</div><!--- end-team-member --->
+							<div class="col-md-3 team-member">
+								<div class="team-member-info">
+									<img class="member-pic" src="images/team-member3.jpg" title="name" />
+									<h5><a href="#">Bui The Nam</a></h5>
+									<span>Photographer</span>
+									<label class="team-member-caption text-center">
+										<p>High as Fuck!</p>
+										<ul>
+											<li><a class="t-twitter" href="https://twitter.com/ShinyySmile"><span> </span></a></li>
+											<li><a class="t-facebook" href="https://www.facebook.com/shinyysmile"><span> </span></a></li>
+											<li><a class="t-googleplus" href="#"><span> </span></a></li>
+											<div class="clearfix"> </div>
+										</ul>
+									</label>
+								</div>
+							</div><!--- end-team-member --->
+							<div class="clearfix"> </div>
+						</div>
+							<div class="clearfix"> </div>
+					<!--//team-members---->
+					</div>
+				</div>
+				<!----//team---->
+				<div class="clearfix"> </div>
+				<!----people-says----->
+					<div class="test-monials text-center">
+						<div class="container">
+							<span><img src="images/icon1.png" title="quit"/></span>
+						<script>
+							    $(document).ready(function() {
+							      $("#owl-demo1").owlCarousel({
+							        items : 1,
+							        lazyLoad : true,
+							        autoPlay : true,
+							        itemsDesktop : 2,
+							      });
+							    });
+						 </script>
+						<div id="owl-demo1" class="owl-carousel">
+					       <div class="item">
+					          <p>This Website is the best, I would sell my whole company for whoever make this</p>
+					     		<div class="quit-people">
+					     			<img src="images/stevejobs.jpg" title="name" />
+					     			<h4><a href="#"> Steve Jobs</a></h4>
+					     			<span>CEO at APPLE</span>
+					     		</div>
+					       </div>
+					        <div class="item">
+					          <p>I killed my ex because she said this website sucks</p>
+					     		<div class="quit-people">
+					     			<img src="images/kimjongun.jpg" title="name" />
+					     			<h4><a href="#"> Kim Jong-un</a></h4>
+					     			<span>Supreme Leader of North Korea</span>
+					     		</div>
+					       </div>
+					        <div class="item">
+					          <p>Caesar like it, Caesar want you to like it too</p>
+					     		<div class="quit-people">
+					     			<img src="images/Dawn-Planet-Apes-Pictures.jpg" title="name" />
+					     			<h4><a href="#"> Caesar</a></h4>
+					     			<span>Leader of the Ape</span>
+					     		</div>
+					       </div>
+				         </div>
+				         </div>
+					</div>
+				<!----//people-says----->
+				<!-----FEATURED----->
+				<div class="featured">
+					<div class="section-head text-center">
+						<h3><span class="frist"> </span>FEATURED IN<span class="second"> </span></h3>
+					</div>
+						<script>
+							    $(document).ready(function() {
+							      $("#owl-demo2").owlCarousel({
+							        items : 5,
+							        lazyLoad : true,
+							        autoPlay : true,
+							        pagination : false,
+							      });
+							    });
+						 </script>
+						<div id="owl-demo2" class="owl-carousel">
+					       <div class="item">
+					       		<img src="images/PC_Gamer_logo.jpg" title="PC Gamer" />
+					       </div>
+					       <div class="item">
+					       		<img src="images/time.png" title="Time" />
+					       </div>
+					       <div class="item">
+					       		<img src="images/SI.png" title="SI" />
+					       </div>
+					       <div class="item">
+					       		<img src="images/Rolling_Stone_logo.png" title="RS" />
+					       </div>
+					       <div class="item">
+					       		<img src="images/logo-vogue-italia.png" title="Vogue" />
+					       </div>
+						    <div class="item">
+					       		<img src="images/PC_Gamer_logo.jpg" title="PC Gamer" />
+					       </div>
+					       <div class="item">
+					       		<img src="images/time.png" title="Time" />
+					       </div>
+					       <div class="item">
+					       		<img src="images/SI.png" title="SI" />
+					       </div>
+					       <div class="item">
+					       		<img src="images/Rolling_Stone_logo.png" title="RS" />
+					       </div>
+					       <div class="item">
+					       		<img src="images/logo-vogue-italia.png" title="Vogue" />
+					       </div>
+					    </div>
+			</div>
+			<!-----FEATURED----->
+			<!-----getintouch----->
+			<div id="contact" class="getintouch">
+				<div class="container">
+					<div class="section-head text-center">
+						<h3><span class="frist"> </span>GET IN TOUCH<span class="second"> </span></h3>
+						<p>We will try to respond as soon as possible</p>
+					</div>
+					<!---->
+					<div class="col-md-9 getintouch-left">
+						<div class="contact-form col-md-10">
+							<h3>Say hello!</h3>
+							<form>
+								<input type="text" placeholder="Name" required />
+								<input type="text"  placeholder="Email" required />
+								<textarea placeholder="Message" required /> </textarea>
+								<input type="submit" value="Send message" />
+							</form>
+						</div>
+						<ul class="footer-social-icons col-md-2 text-center">
+							<li><a class="f-be" href="#"><span> </span></a></li>
+							<li><a class="f-tw" href="#"><span> </span></a></li>
+							<li><a class="f-db" href="#"><span> </span></a></li>
+							<li><a class="f-ti" href="#"><span> </span></a></li>
+							<li><a class="f-go" href="#"><span> </span></a></li>
+							<div class="clearfix"> </div>
 						</ul>
-				</div> <!-- /.update-text -->
-
-				<div class="update-right-border"></div> <!-- /.update-right-border -->
-			</div> <!-- / .ccr-last-update -->
-
-
-			<section id="ccr-slide-main" class="carousel slide" data-ride="carousel">				
-					
-					<!-- Carousel items -->
-					<div class="carousel-inner">
-						<div class="active item">
-							<div class="container slide-element">
-								<img src="img/slide/main-slide-1.jpg" alt="Main Slide Image 1">
-								<p><a href="#">Lorem ipsum dolor sit amet</a></p>
-							</div> <!-- /.slide-element -->
-						</div> <!--/.active /.item -->
-
-						<div class="item">
-							<div class="container slide-element">
-								<img src="img/slide/main-slide-2.jpg" alt="Main Slide Image 1">
-								<p><a href="#">Lorem ipsum dolor sit amet</a></p>
-							</div> <!-- /.slide-element -->
-						</div> <!--  /.item -->
-
-						<div class="item">
-							<div class="container slide-element">
-								<img src="img/slide/main-slide-3.jpg" alt="Main Slide Image 1">
-								<p><a href="#">Lorem ipsum dolor sit amet</a></p>
-							</div> <!-- /.slide-element -->
-						</div> <!-- .item -->
-
-						<div class="item">
-							<div class="container slide-element">
-								<img src="img/slide/main-slide-4.jpg" alt="Main Slide Image 1">
-								<p><a href="#">Lorem ipsum dolor sit amet</a></p>
-							</div> <!-- /.slide-element -->
-						</div> <!-- /.item -->
-
-						
-					</div> <!-- /.carousel-inner -->
-					
-					<!-- slider nav -->
-					<a class="carousel-control left" href="#ccr-slide-main" data-slide="prev"><i class="fa fa-arrow-left"></i></a>
-					<a class="carousel-control right" href="#ccr-slide-main" data-slide="next"><i class="fa fa-arrow-right"></i></a>
-
-					<ol class="carousel-indicators">
-						<li data-target="#ccr-slide-main" data-slide-to="0" class="active"></li>
-						<li data-target="#ccr-slide-main" data-slide-to="1"></li>
-						<li data-target="#ccr-slide-main" data-slide-to="2"></li>
-						<li data-target="#ccr-slide-main" data-slide-to="3"></li>
-					</ol> <!-- /.carousel-indicators -->
-
-							
-			</section><!-- /#ccr-slide-main -->
-
-
-
-
-			<section id="ccr-latest-post-gallery">
-					<div class="ccr-gallery-ttile">
-						<span></span> 
-						<p>Others Latest Post Gallery</p>
-					</div><!-- .ccr-gallery-ttile -->
-
-					
-						<ul class="ccr-latest-post">
-							<li>
-								<div class="ccr-thumbnail">
-									<img src="img/thumbnail1.jpg" alt="Thumbnail 1">
-									<p><a href="#postlink">Read More</a></p>
-								</div>
-								<h4><a href="#postlink">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h4>
-							</li>
-							<li>
-								<div class="ccr-thumbnail">
-									<img src="img/thumbnail2.jpg" alt="Thumbnail 1">
-									<p><a href="#postlink">Read More</a></p>
-								</div>
-								<h4><a href="#postlink">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h4>
-							</li>
-							<li>
-								<div class="ccr-thumbnail">
-									<img src="img/thumbnail3.jpg" alt="Thumbnail 1">
-									<p><a href="#postlink">Read More</a></p>
-								</div>
-								<h4><a href="#postlink">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h4>
-							</li>
-							<li>
-								<div class="ccr-thumbnail">
-									<img src="img/thumbnail4.jpg" alt="Thumbnail 1">
-									<p><a href="#postlink">Read More</a></p>
-								</div>
-								<h4><a href="#postlink">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h4>
-							</li>
-							<li>
-								<div class="ccr-thumbnail">
-									<img src="img/thumbnail5.jpg" alt="Thumbnail 1">
-									<p><a href="#postlink">Read More</a></p>
-								</div>
-								<h4><a href="#postlink">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h4>
-							</li>
-							<li>
-								<div class="ccr-thumbnail">
-									<img src="img/thumbnail6.jpg" alt="Thumbnail 1">
-									<p><a href="#postlink">Read More</a></p>
-								</div>
-								<h4><a href="#postlink">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h4>
-							</li>
-						</ul> <!-- /.ccr-latest-post -->
-					
-				</section> <!--  /#ccr-latest-post-gallery  -->
-				
-				<section class="bottom-border">
-				</section> <!-- /#bottom-border -->
-
-
-
-
-				<section id="ccr-world-news">
-					<div class="ccr-gallery-ttile">
-							<span></span> 
-							<p>World News</p>
-					</div> <!-- .ccr-gallery-ttile -->
-					
-					<section class="featured-world-news">
-						<div class="featured-world-news-img"><img src="img/thumbnail-big1.jpg" alt="Thumb"></div>
-						<div class="featured-world-news-post">
-						<h5>Featured World News Post Title</h5>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, quod, nostrum, corrupti, maxime quis doloribus debitis id consectetur laudantium iure aperiam soluta consequuntur modi accusamus molestias. Ab veniam atque eius...
-							<div class="like-comment-readmore">
-								<i class="fa fa-thumbs-o-up"> 08</i>
-								<a href="#" class="comments"><i class="fa fa-comments-o"></i> 49</a>
-								<a class="read-more" href="#">Read More</a>
-							</div> <!-- /.like-comment-readmore -->
+					</div>
+					<div class="col-md-2 getintouch-left">
+						<div class="footer-device">
+							<img src="images/CookieMonsterWaving.png" title="getintouch" />
 						</div>
-					</section> <!-- /#featured-world-news -->
-
-
-					<ul>
-						<li>
-							
-								<div class="ccr-thumbnail">
-									<img src="img/thumbnail-small-1.jpg" alt="thumbnail-small-1.jpg">
-									<p><a href="#postlink">Read More</a></p>
-								</div>
-							<h5><a href="#">Lorem ipsum is simply dummy text...</a></h5>
-						</li>
-						<li>
-							
-								<div class="ccr-thumbnail">
-									<img src="img/thumbnail-small-2.jpg" alt="thumbnail-small-1.jpg">
-									<p><a href="#postlink">Read More</a></p>
-								</div>
-							<h5><a href="#">Lorem ipsum is simply dummy text...</a></h5>
-						</li>
-						<li>
-							
-								<div class="ccr-thumbnail">
-									<img src="img/thumbnail-small-3.jpg" alt="thumbnail-small-1.jpg">
-									<p><a href="#postlink">Read More</a></p>
-								</div>
-							<h5><a href="#">Lorem ipsum is simply dummy text...</a></h5>
-						</li>
-						<li>
-							
-								<div class="ccr-thumbnail">
-									<img src="img/thumbnail-small-4.jpg" alt="thumbnail-small-1.jpg">
-									<p><a href="#postlink">Read More</a></p>
-								</div>
-							<h5><a href="#">Lorem ipsum is simply dummy text...</a></h5>
-						</li>
-						<li>
-							
-								<div class="ccr-thumbnail">
-									<img src="img/thumbnail-small-5.jpg" alt="thumbnail-small-1.jpg">
-									<p><a href="#postlink">Read More</a></p>
-								</div>
-							<h5><a href="#">Lorem ipsum is simply dummy text...</a></h5>
-						</li>
-						<li>
-							
-								<div class="ccr-thumbnail">
-									<img src="img/thumbnail-small-6.jpg" alt="thumbnail-small-1.jpg">
-									<p><a href="#postlink">Read More</a></p>
-								</div>
-							<h5><a href="#">Lorem ipsum is simply dummy text...</a></h5>
-						</li>
-						<li>
-							
-								<div class="ccr-thumbnail">
-									<img src="img/thumbnail-small-7.jpg" alt="thumbnail-small-1.jpg">
-									<p><a href="#postlink">Read More</a></p>
-								</div>
-							<h5><a href="#">Lorem ipsum is simply dummy text...</a></h5>
-						</li>
-						<li>
-							
-								<div class="ccr-thumbnail">
-									<img src="img/thumbnail-small-8.jpg" alt="thumbnail-small-1.jpg">
-									<p><a href="#postlink">Read More</a></p>
-								</div>
-							<h5><a href="#">Lorem ipsum is simply dummy text...</a></h5>
-						</li>
-					</ul>
-
-				</section> <!-- / #ccr-world-news -->
-
-
-
-
-				<section class="bottom-border"></section>
-
-				<section id="ccr-sports-gallery">
-					<div class="ccr-gallery-ttile">
-							<span></span> 
-							<p>Sports Gallery</p>
-					</div> <!-- .ccr-gallery-ttile -->
-
-					<section class="featured-sports-news">
-						<div class="featured-sports-newss-img"><img src="img/sports-thumb-1.jpg" alt="Thumb"></div>
-						<div class="featured-sports-news-post">
-						<h5>Featured Sports News Post Title</h5>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, quod, nostrum, corrupti, maxime quis doloribus debitis id consectetur laudantium iure aperiam soluta consequuntur modi accusamus molestias. Ab veniam atque eius...
-							<div class="like-comment-readmore">
-								<i class="fa fa-thumbs-o-up"> 08</i>
-								<a href="#" class="comments"><i class="fa fa-comments-o"></i> 49</a>
-								<a class="read-more" href="#">Read More</a>
-							</div> <!-- /.like-comment-readmore -->
+					</div>	
+				</div>
+			</div>
+			<!---//getintouch----->
+			<!-----footer----->
+			<div class="footer">
+				<div class="container">
+					<div class="footer-grids">
+						<div class="col-md-3 footer-grid about-info">
+							<a href="#"><img src="images/logo.png" title="RankStar" /></a>
+							<p>Rank Star © 2014</p>
 						</div>
-					</section> <!-- /#featured-sports-news -->
-
-					<ul>
-						<li>
-							
-							<div class="ccr-thumbnail">
-								<img src="img/sports-thumb-2.jpg" alt="thumbnail-small-1.jpg">
-								<p><a href="#postlink">Read More</a></p>
-							</div>
-							<h5><a href="#">Lorem ipsum is simply dummy text...</a></h5>
-						</li>
-						<li>
-							
-							<div class="ccr-thumbnail">
-								<img src="img/sports-thumb-3.jpg" alt="thumbnail-small-1.jpg">
-								<p><a href="#postlink">Read More</a></p>
-							</div>
-							<h5><a href="#">Lorem ipsum is simply dummy text...</a></h5>
-						</li>
-						<li>
-							
-							<div class="ccr-thumbnail">
-								<img src="img/sports-thumb-4.jpg" alt="thumbnail-small-1.jpg">
-								<p><a href="#postlink">Read More</a></p>
-							</div>
-							<h5><a href="#">Lorem ipsum is simply dummy text...</a></h5>
-						</li>
-						<li>
-							
-							<div class="ccr-thumbnail">
-								<img src="img/sports-thumb-5.jpg" alt="thumbnail-small-1.jpg">
-								<p><a href="#postlink">Read More</a></p>
-							</div>
-							<h5><a href="#">Lorem ipsum is simply dummy text...</a></h5>
-						</li>
-						<li>
-							
-							<div class="ccr-thumbnail">
-								<img src="img/sports-thumb-6.jpg" alt="thumbnail-small-1.jpg">
-								<p><a href="#postlink">Read More</a></p>
-							</div>
-							<h5><a href="#">Lorem ipsum is simply dummy text...</a></h5>
-						</li>
-						<li>
-							
-							<div class="ccr-thumbnail">
-								<img src="img/sports-thumb-7.jpg" alt="thumbnail-small-1.jpg">
-								<p><a href="#postlink">Read More</a></p>
-							</div>
-							<h5><a href="#">Lorem ipsum is simply dummy text...</a></h5>
-						</li>
-						<li>
-							
-							<div class="ccr-thumbnail">
-								<img src="img/sports-thumb-8.jpg" alt="thumbnail-small-1.jpg">
-								<p><a href="#postlink">Read More</a></p>
-							</div>
-							<h5><a href="#">Lorem ipsum is simply dummy text...</a></h5>
-						</li>
-						<li>
-							
-							<div class="ccr-thumbnail">
-								<img src="img/sports-thumb-9.jpg" alt="thumbnail-small-1.jpg">
-								<p><a href="#postlink">Read More</a></p>
-							</div>
-							<h5><a href="#">Lorem ipsum is simply dummy text...</a></h5>
-						</li>
-						<li>
-							
-							<div class="ccr-thumbnail">
-								<img src="img/sports-thumb-10.jpg" alt="thumbnail-small-1.jpg">
-								<p><a href="#postlink">Read More</a></p>
-							</div>
-							<h5><a href="#">Lorem ipsum is simply dummy text...</a></h5>
-						</li>
-						<li>
-							
-							<div class="ccr-thumbnail">
-								<img src="img/sports-thumb-11.jpg" alt="thumbnail-small-1.jpg">
-								<p><a href="#postlink">Read More</a></p>
-							</div>
-							<h5><a href="#">Lorem ipsum is simply dummy text...</a></h5>
-						</li>
-					</ul>					
-				
-				</section> <!-- /#ccr-sports-gallery -->
-
-				<section class="bottom-border"></section>
-
-
-
-
-
-
-
-
-		</section><!-- /.col-md-8 / #ccr-left-section -->
-
-
-
-		<aside id="ccr-right-section" class="col-md-4 ccr-home">
-			<section id="social-buttons">
-				 <ul>
-				 	<li>
-				 		<a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-
-						<p><span class="bubble"></span><span class="count">202</span> Like</p>
-				 	</li>
-				 	<li>
-				 		<a href="#"  class="linkedin"><i class="fa fa-linkedin"></i></a>
-						<p><span class="bubble"></span><span class="count">202</span> Like</p>
-				 	</li>
-				 	<li>
-				 		<a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-						<p><span class="bubble"></span><span class="count">202</span> Follow</p>
-				 	</li>
-				 	<li>
-				 		<a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-						<p><span class="bubble"></span><span class="count">202</span> Like</p>
-				 	</li>
-				 </ul>
-					
-			</section>  <!-- /#social-buttons -->
+						<div class="col-md-3 footer-grid subscribe">
+							<h3>Subscribe </h3>
+							<form>
+								<input type="text" placeholder="" required />
+								<input type="submit" value="" />
+							</form>
+							<p>Subscribe to receive notifications on upcoming events</p>
+						</div>
+						<div class="col-md-3 footer-grid explore">
+							<h3>Services</h3>
+							<ul class="col-md-6">
+								<li><a href="#">Rank Tracking</a></li>
+								<li><a href="#">Charting</a></li>
+								<li><a href="#">Keywords Rating</a></li>
+								<li><a href="#">Keywords Acquisition</a></li>
+							</ul>
+							<ul class="col-md-6">
+								<li><a href="#">Themeforest</a></li>
+								<li><a href="#">Microsoft</a></li>
+								<li><a href="#">Google</a></li>
+								<li><a href="#">Yahoo</a></li>
+							</ul>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="col-md-3 footer-grid copy-right">
+							<p>Eusmod tempor incididunt ut labore et dolore magna aliqua. ut labore et dolore magna aliqua. </p>
+							<p class="copy">Template by <a href="http://w3layouts.com/">w3layouts</a></p>
+						</div>
+						<div class="clearfix"> </div>
+						<script type="text/javascript">
+							$(document).ready(function() {
+								/*
+								var defaults = {
+						  			containerID: 'toTop', // fading element id
+									containerHoverID: 'toTopHover', // fading element hover id
+									scrollSpeed: 1200,
+									easingType: 'linear' 
+						 		};
+								*/
+								
+								$().UItoTop({ easingType: 'easeOutQuart' });
+								
+							});
+						</script>
+							<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+					</div>
+				</div>
+			</div>
+			<!---//footer----->
 			
-			<section id="sidebar-popular-post">
-				<div class="ccr-gallery-ttile">
-					<span></span> 
-					<p><strong>Popular Post</strong></p>
-				</div> <!-- .ccr-gallery-ttile -->
-				<ul>
-					<li>
-						<img src="img/sports-thumb-10.jpg" alt="Avatar">
-						<a href="#">This is the first popular post</a>
-						<div class="date-like-comment">
-							<span class="date"><time datetime="2014-02-17">2014-02-17</time></span>
-							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
-							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
-						</div>
-					</li>
-					<li>
-						<img src="img/thumbnail-small-7.jpg" alt="Avatar">
-						<a href="#">This is the first popular post</a>
-						<div class="date-like-comment">
-							<span class="date"><time datetime="2014-02-17">2014-02-17</time></span>
-							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
-							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
-						</div>
-					</li>
-					<li>
-						<img src="img/sports-thumb-5.jpg" alt="Avatar">
-						<a href="#">This is the first popular post</a>
-						<div class="date-like-comment">
-							<span class="date"><time datetime="2014-02-17">2014-02-17</time></span>
-							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
-							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
-						</div>
-					</li>
-					<li>
-						<img src="img/thumbnail-small-2.jpg" alt="Avatar">
-						<a href="#">This is the first popular post</a>
-						<div class="date-like-comment">
-							<span class="date"><time datetime="2014-02-17">2014-02-17</time></span>
-							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
-							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
-						</div>
-					</li>
-					<li>
-						<img src="img/thumbnail-small-5.jpg" alt="Avatar">
-						<a href="#">This is the first popular post</a>
-						<div class="date-like-comment">
-							<span class="date"><time datetime="2014-02-17">2014-02-17</time></span>
-							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
-							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
-						</div>
-					</li>
-				</ul>
-
-			</section> <!-- /#sidebar-popular-post -->
-
-			<section id="sidebar-video-post">
-				<div class="ccr-gallery-ttile">
-					<span></span> 
-					<p><strong>Video Post</strong></p>
-				</div> <!-- .ccr-gallery-ttile -->
-
-				<div class="sidebar-video">
-				<iframe width="340" height="195" src="//www.youtube.com/embed/Ak8f8yTPRRc" frameborder="0" allowfullscreen></iframe>
-				CodexCoder creates spectacular Premium WordPress Themes, WordPress Plugins, HTML Templates, PSD Template and more...
-				</div>
-				<div class="date-like-comment">
-					<a href="#" class="like"><i class="fa fa-thumbs-o-up"></i> 08</a>
-					<a href="#" class="comments"><i class="fa fa-comments-o"></i> 49</a>
-				</div>
-			</section>  <!-- /#sidebar-video-post -->
-
-			<section id="ccr-calender">
-
-				<table id="calendar">
-				<caption >February 2014</caption>
-				<thead data-iceapc="1">
-				<tr>
-					<th scope="col" title="Monday">M</th>
-					<th scope="col" title="Tuesday">T</th>
-					<th scope="col" title="Wednesday">W</th>
-					<th scope="col" title="Thursday">T</th>
-					<th scope="col" title="Friday">F</th>
-					<th scope="col" title="Saturday">S</th>
-					<th scope="col" title="Sunday">S</th>
-				</tr>
-				</thead>
-
-				<tfoot data-iceapc="4">
-				<tr data-iceapc="3">
-					<td colspan="3" id="prev"><a href="#" title="Previous">&laquo; Jan</a></td>
-					<td class="pad">&nbsp;</td>
-					<td colspan="3" id="next" class="pad"><a href="#" title="Next">Mar &raquo;</a></td>
-				</tr>
-				</tfoot>
-
-				<tbody>
-				<tr>
-					<td></td><td></td><td></td><td></td><td></td><td>1</td><td >2</td>
-				</tr>
-				<tr>
-					<td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
-				</tr>
-				<tr>
-					<td>10</td><td>11</td><td>12</td><td>13</td><td><a href="#" title="Post">14</a></td><td>15</td><td>16</td>
-				</tr>
-				<tr>
-					<td>17</td><td id="today">18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td>
-				</tr>
-				<tr>
-					<td>24</td><td>25</td><td>26</td><td>27</td><td>28</td>
-					<td></td><td></td>
-				</tr>
-				</tbody>
-				</table>
-
-			</section>
-
-
-			<section id="sidebar-older-post">
-				<div class="ccr-gallery-ttile">
-					<span></span> 
-					<p><strong>Older Post</strong></p>
-				</div> <!-- .ccr-gallery-ttile -->
-				<ul>
-					<li>
-						<img src="img/sports-thumb-10.jpg" alt="Avatar">
-						<a href="#">This is the first popular post</a>
-						<div class="date-like-comment">
-							<span class="date"><time datetime="2014-02-17">2014-02-17</time></span>
-							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
-							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
-						</div>
-					</li>
-					<li>
-						<img src="img/thumbnail-small-7.jpg" alt="Avatar">
-						<a href="#">This is the first popular post</a>
-						<div class="date-like-comment">
-							<span class="date"><time datetime="2014-02-17">2014-02-17</time></span>
-							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
-							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
-						</div>
-					</li>
-					<li>
-						<img src="img/sports-thumb-5.jpg" alt="Avatar">
-						<a href="#">This is the first popular post</a>
-						<div class="date-like-comment">
-							<span class="date"><time datetime="2014-02-17">2014-02-17</time></span>
-							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
-							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
-						</div>
-					</li>
-					<li>
-						<img src="img/thumbnail-small-2.jpg" alt="Avatar">
-						<a href="#">This is the first popular post</a>
-						<div class="date-like-comment">
-							<span class="date"><time datetime="2014-02-17">2014-02-17</time></span>
-							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
-							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
-						</div>
-					</li>
-					<li>
-						<img src="img/thumbnail-small-5.jpg" alt="Avatar">
-						<a href="#">This is the first popular post</a>
-						<div class="date-like-comment">
-							<span class="date"><time datetime="2014-02-17">2014-02-17</time></span>
-							<a class="like" href="#"><i class="fa fa-thumbs-o-up"></i> 08</a>
-							<a class="comments" href="#"><i class="fa fa-comments-o"></i> 49</a>
-						</div>
-					</li>
-				</ul>
-
-			</section> <!-- /#sidebar-older-post -->
-
-			<section id="sidebar-entertainment-post">
-				<div class="ccr-gallery-ttile">
-					<span></span> 
-					<p><strong>Entertainment</strong></p>
-				</div> <!-- .ccr-gallery-ttile -->
-
-				<div class="sidebar-entertainment">
-					<img src="img/entertainment.jpg" alt="entertainment">
-					<a href="#">Miss Joly loves you to share her tell. Are you ready?</a>
-				</div>
-				<div class="date-like-comment">
-					<a href="#" class="like"><i class="fa fa-thumbs-o-up"></i> 08</a>
-					<a href="#" class="comments"><i class="fa fa-comments-o"></i> 49</a>
-				</div>
-			</section>  <!-- /#sidebar-entertainment-post -->
-
-
-			<section id="ccr-sidebar-add-place">
-				<div class="sidebar-add-place">
-					370x250 px
-				</div> 
-			</section> <!-- /#ccr-sidebar-add-place -->
-
-
-			<section id="ccr-sidebar-newslater">
-				
-				<div class="ccr-gallery-ttile">
-					<span></span> 
-					<p><label for="sb-newslater"><strong>Newslater</strong></label></p>
-				</div> <!-- .ccr-gallery-ttile -->
-				
-				<div class="sidebar-newslater-form">
-					<form class="ccr-gallery-ttile" action="#">
-						<input type="email" id="sb-newslater" name="sb-newslater" placeholder="Enter your email address" required>
-						<button type="submit">Subscribe</button>
-
-					</form>
-				</div> <!-- /.sidebar-newslater-form -->
-				
-			</section> <!-- /#ccr-sidebar-newslater -->
-
-			<section id="ccr-find-on-fb">
-				<div class="find-fb-title">
-					<span><i class="fa fa-facebook"></i></span> Find us on Facebook
-				</div> <!-- /.find-fb-title -->
-				<div class="find-on-fb-body">
-
-					<div class="fb-like-box" data-href="https://www.facebook.com/codexcoderltd/" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
-
-				</div> <!-- /.find-on-fb-body -->
-			</section> <!-- /#ccr-find-on-fb -->
-
-
-		</aside><!-- / .col-md-4  / #ccr-right-section -->
-
-
-	</div><!-- /.container -->
-</section><!-- / #ccr-main-section -->
-
-<aside id="ccr-footer-sidebar">
-	<div class="container">
-
-		<ul>
-			<li class="col-md-3">
-				<h5>About Us</h5>
-				<div class="about-us">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, quod, nostrum, corrupti, maxime quis doloribus debitis id consectetur laudantium iure aperiam soluta consequuntur modi accusamus molestias. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, quod, nostrum, corrupti, maxime quis doloribus debitis id consectetur laudantium iure aperiam soluta consequuntur modi accusamus molestias Ab veniam atque eius...
-				</div>
-				<div class="site-logo">
-					<a href="index.html"><img src="img/logo.png" alt="Side Logo" /><h1>Daily <span>News</span></h1><h3>The Daily News Source</h3></a>
-				</div> <!-- / .navbar-header -->
-				
-			</li>
-			<li class="col-md-3">
-				<h5>Popular Post</h5>
-				<ul>
-					<li>
-						<img src="img/thumbnail-small-1.jpg" alt="Avatar">
-						<a href="#">Lorem Ipsum is a samply dummy text of Popular Post</a>
-					</li>
-					<li>
-						<img src="img/sports-thumb-4.jpg" alt="Avatar">
-						<a href="#">Lorem Ipsum is a samply dummy text of Popular Post</a>
-					</li>
-					<li>
-						<img src="img/thumbnail-small-3.jpg" alt="Avatar">
-						<a href="#">Lorem Ipsum is a samply dummy text of Popular Post</a>
-					</li>
-					<li>
-						<img src="img/thumbnail-small-5.jpg" alt="Avatar">
-						<a href="#">Lorem Ipsum is a samply dummy text of Popular Post</a>
-					</li>
-				</ul>
-				
-			</li>
-			<li class="col-md-3">
-				<h5>Recent Post</h5>
-				<ul>
-					<li>
-						<img src="img/thumbnail-small-8.jpg" alt="Avatar">
-						<a href="#">Lorem Ipsum is a samply dummy text of Recent Post</a>
-					</li>
-					<li>
-						<img src="img/sports-thumb-6.jpg" alt="Avatar">
-						<a href="#">Lorem Ipsum is a samply dummy text of Recent Post</a>
-					</li>
-					<li>
-						<img src="img/thumbnail-small-7.jpg" alt="Avatar">
-						<a href="#">Lorem Ipsum is a samply dummy text of Recent Post</a>
-					</li>
-					<li>
-						<img src="img/thumbnail-small-6.jpg" alt="Avatar">
-						<a href="#">Lorem Ipsum is a samply dummy text of Recent Post</a>
-					</li>
-				</ul>
-				
-			</li>
-			<li class="col-md-3">
-				<h5>Tags</h5>
-				<div class="tagcloud">
-					<a href="#">Football</a>
-					<a href="#">Games</a>
-					<a href="#">World News</a>
-					<a href="#">USA</a>
-					<a href="#">Salman</a>
-					<a href="#">Masrafi</a>
-					<a href="#">Afgan</a>
-					<a href="#">Obama</a>
-					<a href="#">t20</a>
-					<a href="#">Business</a>
-					<a href="#">Education</a>
-					<a href="#">Lorem</a>
-					<a href="#">Dhaka</a>
-					<a href="#">BBC</a>
-					<a href="#">Poland</a>
-					<a href="#">Technology</a>
-				</div>
-				
-			</li>
-		</ul>
-	</div>
-	
-</aside> <!-- /#ccr-footer-sidebar -->
-
-
-<footer id="ccr-footer">
-	<div class="container">
-	 	<div class="copyright">
-	 		&copy; 2014, Copyrights <a href="http://codexcoder.com">CodexCoder</a> Theme. All Rights Reserved
-	 	</div> <!-- /.copyright -->
-
-	 	<div class="footer-social-icons">
-	 		<ul>
-	 			<li>
-	 				<a href="#"  class="google-plus"><i class="fa fa-google-plus"></i></a>
-	 			</li>
-	 			<li >
-	 				<a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-	 			</li>
-	 			<li >
-	 				<a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-	 			</li>
-	 			<li >
-	 				<a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-	 			</li>
-	 		</ul>
-	 		
-	 	</div><!--  /.cocial-icons -->
-
-	</div> <!-- /.container -->
-</footer>  <!-- /#ccr-footer -->
-
-
-	<script src="js/jquery-1.9.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/custom.js"></script>
-
-</body>
+	</body>
 </html>
+
