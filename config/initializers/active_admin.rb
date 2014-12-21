@@ -163,7 +163,7 @@ ActiveAdmin.setup do |config|
   # To load a stylesheet:
      config.register_stylesheet 'bootstrap.min.css'
   config.register_stylesheet 'bootstrap-responsive.min.css'
-  config.register_stylesheet 'font-awesome.min.css'
+
   config.register_stylesheet 'jquery-ui-1.10.3.full.min.css'
   config.register_stylesheet 'ace-fonts.css'
       config.register_stylesheet 'ace.min.css'

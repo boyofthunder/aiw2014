@@ -18,3 +18,4 @@ gem 'mysql2'
     gem 'bcrypt-ruby', :require => "bcrypt"
     gem 'highstocks-rails', '~> 2.0.4'
     gem 'protected_attributes'
+    gem 'font-awesome-rails'

@@ -29,7 +29,12 @@
                 else
                   link_to "Active", toggle_admin_keyword_path(keyword), method: :put, action: :toggle ,:class => "btn btn-small btn-info"
                 end %></td>
-        <td class="center"><%= link_to "Remove", admin_keyword_path(keyword), method: :delete, data: {confirm: "Are you sure?"}, disable_with: 'Deleting...' %></td>
+        <td class="center"><%= link_to(
+                                       fa_icon("trash-o").html_safe,
+                                               admin_keyword_path(keyword),
+                                               method: :delete, data: {confirm: "Are you sure?"},
+                                               disable_with: 'Deleting...',
+                                               :class => "btn btn-small btn-danger ") %></td>
       </tr>
   <% end %>
 

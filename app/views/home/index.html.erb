@@ -6,7 +6,7 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <%= javascript_include_tag 'jquery.min', 'data-turbolinks-track' => true %>
     <%= stylesheet_link_tag    'popuo-box', media: 'all', 'data-turbolinks-track' => true %>
-
+  <%= stylesheet_link_tag    'home.css.scss', media: 'all', 'data-turbolinks-track' => true %>
 
     <!---- start-smoth-scrolling---->
     <%= javascript_include_tag 'move-top', 'data-turbolinks-track' => true %>
@@ -57,7 +57,7 @@
         <div class="container">
             <div class="top-header">
                 <div class="logo">
-                    <a href="#"><%= image_tag("logo.png", :alt => "logo") %></a>
+                    <a href="#"><%=fa_icon "line-chart 5"%></a>
                 </div>
                 <!----start-top-nav---->
                 <nav class="top-nav">
@@ -282,7 +282,7 @@
     </div>
     <!----//features-grids----->
     <!----//features----->
-    
+
 
     <!----team---->
     <div id="about" class="team">
