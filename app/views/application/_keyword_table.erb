@@ -1,0 +1,39 @@
+<table aria-describedby="sample-table-2_info" id="sample-table-2" class="table table-striped table-bordered table-hover dataTable">
+  <thead>
+  <tr>
+    <th></th>
+    <th>Keyword</th>
+    <th><i class="icon-time bigger-110 hidden-phone"></i>Last Updated</th>
+    <th>Status</th>
+    <th>Active/Deactive</th>
+    <th>Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @collection.each do |keyword| %>
+      <tr class="clickable">
+        <td class="center"><input class="ace" type="checkbox"/><span class="lbl"></span></td>
+        <td><%= link_to keyword.query, admin_keyword_path(keyword) %></td>
+        <td class="center"><%= if !keyword.results.last.nil?
+                  keyword.results.last.date.strftime("%d/%m/%Y")
+                else
+                  "--/--/--"
+                end %></td>
+        <td class="center"><span class="label <%= if !keyword.status
+                                     "label-inverse"
+                                   else
+                                     "label-success arrowed"
+                                   end %>">dfdfasdf</span></td>
+        <td class="center"><%= if keyword.status
+                  link_to "Deactive", toggle_admin_keyword_path(keyword), method: :put, action: :toggle,:class => "btn btn-small btn-danger"
+                else
+                  link_to "Active", toggle_admin_keyword_path(keyword), method: :put, action: :toggle ,:class => "btn btn-small btn-info"
+                end %></td>
+        <td class="center"><%= link_to "Remove", admin_keyword_path(keyword), method: :delete, data: {confirm: "Are you sure?"}, disable_with: 'Deleting...' %></td>
+      </tr>
+  <% end %>
+
+
+  </tbody>
+</table>
+

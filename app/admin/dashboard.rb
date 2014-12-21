@@ -2,13 +2,24 @@ ActiveAdmin.register_page "Dashboard" do
 
   menu priority: 1, label: proc{ I18n.t("active_admin.dashboard") }
 
+
+
   content title: proc{ I18n.t("active_admin.dashboard") } do
-    div class: "blank_slate_container", id: "dashboard_default_message" do
-      span class: "blank_slate" do
-        span I18n.t("active_admin.dashboard_welcome.welcome")
-        small I18n.t("active_admin.dashboard_welcome.call_to_action")
+    panel "Recent Keywords" do
+      table_for Keyword.where(:admin_user_id => current_admin_user.id) do
+        column :id
+        column :query
       end
+      strong { link_to "View All Keywords", admin_keywords_path }
     end
+  end
+    #div class: "blank_slate_container", id: "dashboard_default_message" do
+    #  span class: "blank_slate" do
+    #    span "Current Admin User: #{current_admin_user.id}"
+    #    span I18n.t("active_admin.dashboard_welcome.welcome")
+    #    small I18n.t("active_admin.dashboard_welcome.call_to_action")
+    #  end
+    #end
 
     # Here is an example of a simple dashboard with columns and panels.
     #
@@ -30,4 +41,4 @@ ActiveAdmin.register_page "Dashboard" do
     #   end
     # end
   end # content
-end
+

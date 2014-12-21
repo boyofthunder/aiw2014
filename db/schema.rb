@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141207105947) do
+ActiveRecord::Schema.define(version: 20141218014855) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -45,5 +45,36 @@ ActiveRecord::Schema.define(version: 20141207105947) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "contents", force: true do |t|
+    t.integer  "result_id"
+    t.integer  "rank"
+    t.text     "url"
+    t.text     "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "contents", ["result_id"], name: "index_contents_on_result_id", using: :btree
+
+  create_table "keywords", force: true do |t|
+    t.integer  "admin_user_id"
+    t.text     "query"
+    t.boolean  "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "keywords", ["admin_user_id"], name: "index_keywords_on_admin_user_id", using: :btree
+
+  create_table "results", force: true do |t|
+    t.integer  "keyword_id"
+    t.date "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "results", ["keyword_id"], name: "index_results_on_keyword_id", using: :btree
 
 end

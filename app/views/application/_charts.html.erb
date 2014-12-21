@@ -1,0 +1,32 @@
+<div id="chart_container" style="height: 350px; min-width: 310px"></div>
+<script type="text/javascript">
+    //<![CDATA[
+    $(function () {
+        $('#chart_container').highcharts('StockChart', {
+            chart: {zoomType: 'x'},
+            rangeSelector: {
+                inputEnabled: $('#chart_container').width() > 480,
+                buttons: [{type: 'day', count: 3, text: '3d'}, {type: 'week', count: 1, text: '1w'}, {
+                    type: 'month',
+                    count: 1,
+                    text: '1m'
+                }, {type: 'month', count: 6, text: '6m'}, {type: 'year', count: 1, text: '1y'}, {
+                    type: 'all',
+                    text: 'All'
+                }],
+                selected: 3
+            },
+            navigator: {yAxis: {reversed: true}},
+            yAxis: {reversed: true, min: 0, allowDecimals: false, title: {text: 'Rank'}},
+            title: {text: 'GUCCI - YouTube'},
+            subtitle: {text: ''},
+            series: [{
+                name: "<%= raw date %>",
+                data: <%= raw data %>,
+                pointStart: Date.UTC<%= raw date %>,
+                pointInterval: 3600 * 1000 * 24,
+                tooltip: {valueDecimals: 0, valuePrefix: 'No.'}
+            },]
+        });
+    });//]]>
+</script>

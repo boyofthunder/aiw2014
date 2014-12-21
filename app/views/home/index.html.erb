@@ -1,614 +1,514 @@
 
-	<head>
-		<title>RankStar - Your No.1 Website for Rank Tracking</title>
-		<%= stylesheet_link_tag    'bootstrap', media: 'all', 'data-turbolinks-track' => true %>
-		<link rel="shortcut icon" href="images/chart_area_up.png" />	
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<%= javascript_include_tag 'jquery.min', 'data-turbolinks-track' => true %>
-		<%= stylesheet_link_tag    'popuo-box', media: 'all', 'data-turbolinks-track' => true %>
-		
-		
-		
-		 <!---- start-smoth-scrolling---->
-		<%= javascript_include_tag 'move-top', 'data-turbolinks-track' => true %>
-		<%= javascript_include_tag 'easing', 'data-turbolinks-track' => true %>
-		<script type="text/javascript">
-			jQuery(document).ready(function($) {
-				$(".scroll").click(function(event){		
-					event.preventDefault();
-					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-				});
-			});
-		</script>
-		 <!-- Custom Theme files -->
-		<%= stylesheet_link_tag    'style', media: 'all', 'data-turbolinks-track' => true %>
-   		 <!-- Custom Theme files -->
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-		</script>
-		<!----webfonts---->
-		
-		<!----//webfonts---->
-		<!----start-top-nav-script---->
-		<script>
-			$(function() {
-				var pull 		= $('#pull');
-					menu 		= $('nav ul');
-					menuHeight	= menu.height();
-				$(pull).on('click', function(e) {
-					e.preventDefault();
-					menu.slideToggle();
-				});
-				$(window).resize(function(){
-	        		var w = $(window).width();
-	        		if(w > 320 && menu.is(':hidden')) {
-	        			menu.removeAttr('style');
-	        		}
-	    		});
-			});
-		</script>
-		<!----//End-top-nav-script---->
+<head>
+    <title>RankStar - Your No.1 Website for Rank Tracking</title>
+    <%= stylesheet_link_tag    'bootstrap', media: 'all', 'data-turbolinks-track' => true %>
+    <link rel="shortcut icon" href="../../assets/images/chart_area_up.png" />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <%= javascript_include_tag 'jquery.min', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'popuo-box', media: 'all', 'data-turbolinks-track' => true %>
+
+
+    <!---- start-smoth-scrolling---->
+    <%= javascript_include_tag 'move-top', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'easing', 'data-turbolinks-track' => true %>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event){
+                event.preventDefault();
+                $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+            });
+        });
+    </script>
+    <!-- Custom Theme files -->
+    <%= stylesheet_link_tag    'style', media: 'all', 'data-turbolinks-track' => true %>
+    <!-- Custom Theme files -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+    <!----webfonts---->
+
+    <!----//webfonts---->
+    <!----start-top-nav-script---->
+    <script>
+    $(function() {
+        var pull 		= $('#pull');
+        menu 		= $('nav ul');
+        menuHeight	= menu.height();
+        $(pull).on('click', function(e) {
+            e.preventDefault();
+            menu.slideToggle();
+        });
+        $(window).resize(function(){
+            var w = $(window).width();
+            if(w > 320 && menu.is(':hidden')) {
+                menu.removeAttr('style');
+            }
+        });
+    });
+    </script>
+    <!----//End-top-nav-script---->
 </head>
-	<body>
-		<!-----start-container----->
-		<!-----header-section------>
-		<div class="header-section">
-			<!----- start-header---->
-			<div id="home" class="header">
-				<div class="container">
-					<div class="top-header">
-						<div class="logo">
-							<a href="#"><%= image_tag("logo.png", :alt => "logo") %></a>
-						</div>
-						<!----start-top-nav---->
-						 <nav class="top-nav">
-							<ul class="top-nav">
-								<li class="active"><a href="#home" class="scroll">Home </a></li>
-								<li class="page-scroll"><a href="#fea" class="scroll">FEATURES</a></li>
-								<li class="page-scroll"><a href="#gallery" class="scroll">Gallery</a></li>
-								<li class="page-scroll"><a href="#about" class="scroll">About </a></li>
-								<li class="contatct-active" class="page-scroll"><a href="#contact" class="scroll">Contact</a></li>
-							</ul>
-							<a href="#" id="pull"><%= image_tag("nav-icon.png", :alt => "menu") %></a>
-						</nav>
-						<div class="clearfix"> </div>
-					</div>
-				</div>
-			</div>
-			<!----- //End-header---->
-			<!----- start-slider---->
-			<!----start-slider-script---->
-			<%= javascript_include_tag 'responsiveslides.min', 'data-turbolinks-track' => true %>
-			 <script>
-			    // You can also use "$(window).load(function() {"
-			    $(function () {
-			      // Slideshow 4
-			      $("#slider4").responsiveSlides({
-			        auto: true,
-			        pager: true,
-			        nav: true,
-			        speed: 500,
-			        namespace: "callbacks",
-			        before: function () {
-			          $('.events').append("<li>before event fired.</li>");
-			        },
-			        after: function () {
-			          $('.events').append("<li>after event fired.</li>");
-			        }
-			      });
-			
-			    });
-			  </script>
-			<!----//End-slider-script---->
-			<!-- Slideshow 4 -->
-			    <div  id="top" class="callbacks_container">
-			      <ul class="rslides" id="slider4">
-			        <li>
-			          <%= image_tag("slide.jpg", :alt => "") %>
-			          <div class="caption text-center">
-			          	<div class="slide-text-info">
-			          		<h1>Introducing <span>RankStar.</span></h1>
-			          		<h2>Made to modify and use anywhere</h2>
-			          		<div class="slide-text">
-			          			<ul>
-			          				<li><span> </span>Track your Website Rank</li>
-			          				<li><span> </span>Improve your results </li>
-			          				<li><span> </span>Make lots of money</li>
-			          			</ul>
-			          		</div>
-			          		<div class="clearfix"> </div>
-			          		<div class="big-btns">
-			          			<a class="download" href="#"><label> </label>Login</a>
-			          			<a class="view" href="#"><label> </label>Register</a>
-			          		</div>
-			          	</div>
-			          </div>
-			        </li>
-			        <li>
-			          <%= image_tag("slide.jpg", :alt => "") %>
-			          <div class="caption text-center">
-			          	<div class="slide-text-info">
-			          		<h1>Introducing <span>Most Popular.</span></h1>
-			          		<h2>Made to modify and use anywhere</h2>
-			          		<div class="slide-text">
-			          			<ul>
-			          				<li><span> </span>Recommended by Google </li>
-			          				<li><span> </span>Most Visited Website in 2020 </li>
-			          				<li><span> </span>Loved by Everyone</li>
-			          			</ul>
-			          		</div>
-			          		<div class="clearfix"> </div>
-			          		<div class="big-btns">
-			          			<a class="download" href="#"><label> </label>Login</a>
-			          			<a class="view" href="#"><label> </label>Register</a>
-			          		</div>
-			          	</div>
-			          </div>
-			        </li>
-			        <li>
-			          <%= image_tag("slide.jpg", :alt => "") %>
-			          <div class="caption text-center">
-			          	<div class="slide-text-info">
-			          		<h1>Introducing <span>Best Website.</span></h1>
-			          		<h2>Made to modify and use anywhere</h2>
-			          		<div class="slide-text">
-			          			<ul>
-			          				<li><span> </span>Compatible with any Device </li>
-			          				<li><span> </span>Simply the Best </li>
-			          				<li><span> </span>Nothing can Compare</li>
-			          			</ul>
-			          		</div>
-			          		<div class="clearfix"> </div>
-			          		<div class="big-btns">
-			          			<a class="download" href="#"><label> </label>Login</a>
-			          			<a class="view" href="#"><label> </label>Register</a>
-			          		</div>
-			          	</div>
-			          </div>
-			        </li>
-			        <li>
-			          <%= image_tag("slide.jpg", :alt => "") %>
-			           <div class="caption text-center">
-			           <div class="slide-text-info">
-			          		<h1>Introducing <span>Amazing app.</span></h1>
-			          		<h2>Made to modify and use anywhere</h2>
-			          		<div class="slide-text">
-			          			<ul>
-			          				<li><span> </span>More Amazing than the Amazing Spiderman </li>
-			          				<li><span> </span>Approved by Kim K </li>
-			          				<li><span> </span>#BreakTheInternet</li>
-			          			</ul>
-			          		</div>
-			          		<div class="clearfix"> </div>
-			          		<div class="big-btns">
-			          				<a class="download" href="#"><label> </label>Login</a>
-			          				<a class="view" href="#"><label> </label>Register</a>
-			          		</div>
-			          	</div>
-			          </div>
-			        </li>
-			      </ul>
-			    </div>
-			    <div class="clearfix"> </div>
-			    <!-----device----->
-			    	<div class="device-demo">
-			    		<%= image_tag("device-in-hand.png", :alt => "rss feed") %> 
-			    	</div>
-			    <!---//device----->
-			<!----- //End-slider---->
-			</div>
-			<!-----//header-section----->
-			<!----features----->
-			<div id="fea" class="features">
-				<div class="container">
-					<div class="section-head text-center">
-						<h3><span class="frist"> </span>AMAZING FEATURES<span class="second"> </span></h3>
-						<p>RankStar has everything that you are looking for in a rank tracking website and more!</p>
-					</div>
-					<!----features-grids----->
-					<div class="features-grids">
-						<div class="col-md-4 features-grid">
-							<div class="features-grid-info">
-								<div class="col-md-2 features-icon">
-									<span class="f-icon0"> </span>
-								</div>
-								<div class="col-md-10 features-info">
-									<h4>Graphs</h4>
-									<p>Display your website ranking in beautiful graphs</p>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-							<div class="features-grid-info">
-								<div class="col-md-2 features-icon">
-									<span class="f-icon1"> </span>
-								</div>
-								<div class="col-md-10 features-info">
-									<h4>Comparing Results</h4>
-									<p>Compare the results of multiple websites based on the same keyword</p>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-							<div class="features-grid-info">
-								<div class="col-md-2 features-icon">
-									<span class="f-icon2"> </span>
-								</div>
-								<div class="col-md-10 features-info">
-									<h4>Keywords Marking</h4>
-									<p>Mark popular keywords for easy tracking</p>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-							
-						</div><!---end-features-grid---->
-						<div class="col-md-4 features-grid">
-							<div class="big-device">
-								<%= image_tag("device.png", :alt => "feature demo") %>
-							</div>
-						</div><!---end-features-grid---->
-						<div class="col-md-4 features-grid">
-							<div class="features-grid-info">
-								<div class="col-md-2 features-icon1">
-									<span class="f-icon3"> </span>
-								</div>
-								<div class="col-md-10 features-info">
-									<h4>Keywords Register</h4>
-									<p>Register more keywords with less money</p>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-							<div class="features-grid-info">
-								<div class="col-md-2 features-icon1">
-									<span class="f-icon4"> </span>
-								</div>
-								<div class="col-md-10 features-info">
-									<h4>Free!!</h4>
-									<p>Our website is totally free, just sign up and enjoy the service</p>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-							<div class="features-grid-info">
-								<div class="col-md-2 features-icon1">
-									<span class="f-icon5"> </span>
-								</div>
-								<div class="col-md-10 features-info">
-									<h4>We need you!</h4>
-									<p>Donate money so our website can function properly</p>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-							
-						</div><!---end-features-grid---->
-						<div class="clearfix"> </div>
-					</div>
-				</div>
-					<!----//features-grids----->
-					<!----//features----->
-					<!----screen-shot-gallery---->
-					<div id="gallery" class="screen-shot-gallery">
-						<div class="container">
-							<div class="section-head text-center">
-								<h3><span class="frist"> </span>SCREENSHOTS GALLERY<span class="second"> </span></h3>
-								<p>Preview of our awesome features!</p>
-							</div>
-						</div>
-						<!----sreen-gallery-cursual---->
-						<div class="sreen-gallery-cursual">
-							 <!-- requried-jsfiles-for owl -->
-							<%= stylesheet_link_tag    'owl.carousel', media: 'all', 'data-turbolinks-track' => true %>
-							    <script src="js/owl.carousel.js"></script>
-							        <script>
-							    $(document).ready(function() {
-							      $("#owl-demo").owlCarousel({
-							        items : 3,
-							        lazyLoad : true,
-							        autoPlay : true,
-							      });
-							    });
-							    </script>
-							 <!-- //requried-jsfiles-for owl -->
-							 <!-- start content_slider -->
-							 <div class="container">
-						       <div id="owl-demo" class="owl-carousel">
-					                <div class="item">
-					                	
-										<%= image_tag("screen.png", :alt => "screen-name",:class => "lazyOwl") %>
-					                </div>
-					                <div class="item">
-					                	<%= image_tag("screen.png", :alt => "screen-name",:class => "lazyOwl") %>
-					                </div>
-					                <div class="item">
-					                	<%= image_tag("screen.png", :alt => "screen-name",:class => "lazyOwl") %>
-					                </div>
-					                <div class="item">
-					                	<%= image_tag("screen.png", :alt => "screen-name",:class => "lazyOwl") %>
-					                </div>
-					                <div class="item">
-					                	<%= image_tag("screen.png", :alt => "screen-name",:class => "lazyOwl") %>
-					                </div>
-					                <div class="item">
-					                	<%= image_tag("screen.png", :alt => "screen-name",:class => "lazyOwl") %>
-					                </div>
-					                <div class="item">
-					                	<%= image_tag("screen.png", :alt => "screen-name",:class => "lazyOwl") %>
-					                </div>
-					                <div class="item">
-					                	<%= image_tag("screen.png", :alt => "screen-name",:class => "lazyOwl") %>
-					                </div>
-				              </div>
-						</div>
-						<!--//sreen-gallery-cursual---->
-					</div>
-				</div>
-				<!--//screen-shot-gallery---->
-				
-				<!----team---->
-				<div id="about" class="team">
-					<div class="container">
-						<div class="section-head text-center">
-							<h3><span class="frist"> </span>PEOPLE BEHIND THE WEBSITE<span class="second"> </span></h3>
-							<p>These people are awesome, give them a kiss!</p>
-						</div>
-					</div>
-					<!----team-members---->
-					<div class="team-members">
-						<div class="container">
-							<div class="col-md-3 team-member">
-								<div class="team-member-info">
-								<%= image_tag("team-member4.jpg", :alt => "name",:class => "member-pic") %>
-									
-									<h5><a href="#">Nguyen Quang Ha</a></h5>
-									<span>Lead Designer</span>
-									<label class="team-member-caption text-center">
-										<p>Drink all day Party all night</p>
-										<ul>
-											<li><a class="t-twitter" href="https://twitter.com/Boyofthunder26"><span> </span></a></li>
-											<li><a class="t-facebook" href="https://www.facebook.com/boyofthunder"><span> </span></a></li>
-											<li><a class="t-googleplus" href="https://plus.google.com/+HàBoyofthunder"><span> </span></a></li>
-											<div class="clearfix"> </div>
-										</ul>
-									</label>
-								</div>
-							</div><!--- end-team-member --->
-							<div class="col-md-3 team-member">
-								<div class="team-member-info">
-									<%= image_tag("team-member1.jpg", :alt => "name",:class => "member-pic") %>
-									<h5><a href="#">Tran Vu Long</a></h5>
-									<span>Lead Developer</span>
-									<label class="team-member-caption text-center">
-										<p>Coolest Bartender of all time</p>
-										<ul>
-											<li><a class="t-twitter" href="#"><span> </span></a></li>
-											<li><a class="t-facebook" href="https://www.facebook.com/long.trum"><span> </span></a></li>
-											<li><a class="t-googleplus" href="#"><span> </span></a></li>
-											<div class="clearfix"> </div>
-										</ul>
-									</label>
-								</div>
-							</div><!--- end-team-member --->
-							<div class="col-md-3 team-member">
-								<div class="team-member-info">
-									<%= image_tag("team-member2.jpg", :alt => "name",:class => "member-pic") %>
-									<h5><a href="#">Nguyen Hai Anh</a></h5>
-									<span>Artist</span>
-									<label class="team-member-caption text-center">
-										<p>I'm Fabulous!</p>
-										<ul>
-											<li><a class="t-twitter" href="#"><span> </span></a></li>
-											<li><a class="t-facebook" href="https://www.facebook.com/haris.sunbae"><span> </span></a></li>
-											<li><a class="t-googleplus" href="#"><span> </span></a></li>
-											<div class="clearfix"> </div>
-										</ul>
-									</label>
-								</div>
-							</div><!--- end-team-member --->
-							<div class="col-md-3 team-member">
-								<div class="team-member-info">
-									<%= image_tag("team-member3.jpg", :alt => "name",:class => "member-pic") %>
-									<h5><a href="#">Bui The Nam</a></h5>
-									<span>Photographer</span>
-									<label class="team-member-caption text-center">
-										<p>High as Fuck!</p>
-										<ul>
-											<li><a class="t-twitter" href="https://twitter.com/ShinyySmile"><span> </span></a></li>
-											<li><a class="t-facebook" href="https://www.facebook.com/shinyysmile"><span> </span></a></li>
-											<li><a class="t-googleplus" href="#"><span> </span></a></li>
-											<div class="clearfix"> </div>
-										</ul>
-									</label>
-								</div>
-							</div><!--- end-team-member --->
-							<div class="clearfix"> </div>
-						</div>
-							<div class="clearfix"> </div>
-					<!--//team-members---->
-					</div>
-				</div>
-				<!----//team---->
-				<div class="clearfix"> </div>
-				<!----people-says----->
-					<div class="test-monials text-center">
-						<div class="container">
-							<span><%= image_tag("icon1.png", :alt => "quit") %></span>
-						<script>
-							    $(document).ready(function() {
-							      $("#owl-demo1").owlCarousel({
-							        items : 1,
-							        lazyLoad : true,
-							        autoPlay : true,
-							        itemsDesktop : 2,
-							      });
-							    });
-						 </script>
-						<div id="owl-demo1" class="owl-carousel">
-					       <div class="item">
-					          <p>This Website is the best, I would sell my whole company for whoever make this</p>
-					     		<div class="quit-people">
-					     			<%= image_tag("stevejobs.jpg", :alt => "name") %>
-					     			<h4><a href="#"> Steve Jobs</a></h4>
-					     			<span>CEO at APPLE</span>
-					     		</div>
-					       </div>
-					        <div class="item">
-					          <p>I killed my ex because she said this website sucks</p>
-					     		<div class="quit-people">
-					     			<%= image_tag("kimjongun.jpg", :alt => "name") %>
-					     			<h4><a href="#"> Kim Jong-un</a></h4>
-					     			<span>Supreme Leader of North Korea</span>
-					     		</div>
-					       </div>
-					        <div class="item">
-					          <p>Caesar like it, Caesar want you to like it too</p>
-					     		<div class="quit-people">
-					     			<%= image_tag("Dawn-Planet-Apes-Pictures.jpg", :alt => "name") %>
-					     			<h4><a href="#"> Caesar</a></h4>
-					     			<span>Leader of the Ape</span>
-					     		</div>
-					       </div>
-				         </div>
-				         </div>
-					</div>
-				<!----//people-says----->
-				<!-----FEATURED----->
-				<div class="featured">
-					<div class="section-head text-center">
-						<h3><span class="frist"> </span>FEATURED IN<span class="second"> </span></h3>
-					</div>
-						<script>
-							    $(document).ready(function() {
-							      $("#owl-demo2").owlCarousel({
-							        items : 5,
-							        lazyLoad : true,
-							        autoPlay : true,
-							        pagination : false,
-							      });
-							    });
-						 </script>
-						<div id="owl-demo2" class="owl-carousel">
-					       <div class="item">
-					       		<%= image_tag("PC_Gamer_logo.jpg", :alt => "PC Gamer") %>
-					       </div>
-					       <div class="item">
-					       		<%= image_tag("time.png", :alt => "time") %>
-					       </div>
-					       <div class="item">
-					       		<%= image_tag("SI.png", :alt => "SI") %>
-					       </div>
-					       <div class="item">
-					       		<%= image_tag("Rolling_Stone_logo.png", :alt => "RS") %>
-					       </div>
-					       <div class="item">
-					       		<%= image_tag("logo-vogue-italia.png", :alt => "Vogue") %>
-					       </div>
-						    <div class="item">
-					       		<%= image_tag("PC_Gamer_logo.jpg", :alt => "PC Gamer") %>
-					       </div>
-					       <div class="item">
-					       		<%= image_tag("time.png", :alt => "time") %>
-					       </div>
-					       <div class="item">
-					       		<%= image_tag("SI.png", :alt => "SI") %>
-					       </div>
-					       <div class="item">
-					       		<%= image_tag("Rolling_Stone_logo.png", :alt => "RS") %>
-					       </div>
-					       <div class="item">
-					       		<%= image_tag("logo-vogue-italia.png", :alt => "Vogue") %>
-					       </div>
-					    </div>
-			</div>
-			<!-----FEATURED----->
-			<!-----getintouch----->
-			<div id="contact" class="getintouch">
-				<div class="container">
-					<div class="section-head text-center">
-						<h3><span class="frist"> </span>GET IN TOUCH<span class="second"> </span></h3>
-						<p>We will try to respond as soon as possible</p>
-					</div>
-					<!---->
-					<div class="col-md-9 getintouch-left">
-						<div class="contact-form col-md-10">
-							<h3>Say hello!</h3>
-							<form>
-								<input type="text" placeholder="Name" required />
-								<input type="text"  placeholder="Email" required />
-								<textarea placeholder="Message" required /> </textarea>
-								<input type="submit" value="Send message" />
-							</form>
-						</div>
-						<ul class="footer-social-icons col-md-2 text-center">
-							<li><a class="f-be" href="#"><span> </span></a></li>
-							<li><a class="f-tw" href="#"><span> </span></a></li>
-							<li><a class="f-db" href="#"><span> </span></a></li>
-							<li><a class="f-ti" href="#"><span> </span></a></li>
-							<li><a class="f-go" href="#"><span> </span></a></li>
-							<div class="clearfix"> </div>
-						</ul>
-					</div>
-					<div class="col-md-2 getintouch-left">
-						<div class="footer-device">
-							<img src="images/CookieMonsterWaving.png" title="getintouch" />
-						</div>
-					</div>	
-				</div>
-			</div>
-			<!---//getintouch----->
-			<!-----footer----->
-			<div class="footer">
-				<div class="container">
-					<div class="footer-grids">
-						<div class="col-md-3 footer-grid about-info">
-							<a href="#"><img src="images/logo.png" title="RankStar" /></a>
-							<p>Rank Star © 2014</p>
-						</div>
-						<div class="col-md-3 footer-grid subscribe">
-							<h3>Subscribe </h3>
-							<form>
-								<input type="text" placeholder="" required />
-								<input type="submit" value="" />
-							</form>
-							<p>Subscribe to receive notifications on upcoming events</p>
-						</div>
-						<div class="col-md-3 footer-grid explore">
-							<h3>Services</h3>
-							<ul class="col-md-6">
-								<li><a href="#">Rank Tracking</a></li>
-								<li><a href="#">Charting</a></li>
-								<li><a href="#">Keywords Rating</a></li>
-								<li><a href="#">Keywords Acquisition</a></li>
-							</ul>
-							<ul class="col-md-6">
-								<li><a href="#">Themeforest</a></li>
-								<li><a href="#">Microsoft</a></li>
-								<li><a href="#">Google</a></li>
-								<li><a href="#">Yahoo</a></li>
-							</ul>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="col-md-3 footer-grid copy-right">
-							<p>Eusmod tempor incididunt ut labore et dolore magna aliqua. ut labore et dolore magna aliqua. </p>
-							<p class="copy">Template by <a href="http://w3layouts.com/">w3layouts</a></p>
-						</div>
-						<div class="clearfix"> </div>
-						<script type="text/javascript">
-							$(document).ready(function() {
-								/*
-								var defaults = {
-						  			containerID: 'toTop', // fading element id
-									containerHoverID: 'toTopHover', // fading element hover id
-									scrollSpeed: 1200,
-									easingType: 'linear' 
-						 		};
-								*/
-								
-								$().UItoTop({ easingType: 'easeOutQuart' });
-								
-							});
-						</script>
-							<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-					</div>
-				</div>
-			</div>
-			<!---//footer----->
-			
-	</body>
+<body>
+<!-----start-container----->
+<!-----header-section------>
+<div class="header-section">
+    <!----- start-header---->
+    <div id="home" class="header">
+        <div class="container">
+            <div class="top-header">
+                <div class="logo">
+                    <a href="#"><%= image_tag("logo.png", :alt => "logo") %></a>
+                </div>
+                <!----start-top-nav---->
+                <nav class="top-nav">
+                    <ul class="top-nav">
+                        <li class="active"><a href="#home" class="scroll">Home </a></li>
+                        <li class="page-scroll"><a href="#fea" class="scroll">FEATURES</a></li>
+                        <li class="page-scroll"><a href="#gallery" class="scroll">Gallery</a></li>
+                        <li class="page-scroll"><a href="#about" class="scroll">About </a></li>
+                        <li class="contatct-active" class="page-scroll"><a href="#contact" class="scroll">Contact</a></li>
+                    </ul>
+                    <a href="#" id="pull"><%= image_tag("nav-icon.png", :alt => "menu") %></a>
+                </nav>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <!----- //End-header---->
+    <!----- start-slider---->
+    <!----start-slider-script---->
+    <%= javascript_include_tag "responsiveslides.min", "data-turbolinks-track" => true %>
+    <script>
+        // You can also use "$(window).load(function() {"
+        $(function () {
+            // Slideshow 4
+            $("#slider4").responsiveSlides({
+                auto: true,
+                pager: true,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+                before: function () {
+                    $('.events').append("<li>before event fired.</li>");
+                },
+                after: function () {
+                    $('.events').append("<li>after event fired.</li>");
+                }
+            });
+
+        });
+    </script>
+    <!----//End-slider-script---->
+    <!-- Slideshow 4 -->
+    <div  id="top" class="callbacks_container">
+        <ul class="rslides" id="slider4">
+            <li>
+                <%= image_tag("slide.jpg", :alt => "") %>
+                <div class="caption text-center">
+                    <div class="slide-text-info">
+                        <h1>Introducing <span>RankStar.</span></h1>
+                        <h2>Made to modify and use anywhere</h2>
+                        <div class="slide-text">
+                            <ul>
+                                <li><span> </span>Track your Website Rank</li>
+                                <li><span> </span>Improve your results </li>
+                                <li><span> </span>Make lots of money</li>
+                            </ul>
+                        </div>
+                        <div class="clearfix"> </div>
+                        <div class="big-btns">
+                            <a class="download" href="#"><label> </label>Login</a>
+                            <a class="view" href="#"><label> </label>Register</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <%= image_tag("slide.jpg", :alt => "") %>
+                <div class="caption text-center">
+                    <div class="slide-text-info">
+                        <h1>Introducing <span>Most Popular.</span></h1>
+                        <h2>Made to modify and use anywhere</h2>
+                        <div class="slide-text">
+                            <ul>
+                                <li><span> </span>Recommended by Google </li>
+                                <li><span> </span>Most Visited Website in 2020 </li>
+                                <li><span> </span>Loved by Everyone</li>
+                            </ul>
+                        </div>
+                        <div class="clearfix"> </div>
+                        <div class="big-btns">
+                            <a class="download" href="#"><label> </label>Login</a>
+                            <a class="view" href="#"><label> </label>Register</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <%= image_tag("slide.jpg", :alt => "") %>
+                <div class="caption text-center">
+                    <div class="slide-text-info">
+                        <h1>Introducing <span>Best Website.</span></h1>
+                        <h2>Made to modify and use anywhere</h2>
+                        <div class="slide-text">
+                            <ul>
+                                <li><span> </span>Compatible with any Device </li>
+                                <li><span> </span>Simply the Best </li>
+                                <li><span> </span>Nothing can Compare</li>
+                            </ul>
+                        </div>
+                        <div class="clearfix"> </div>
+                        <div class="big-btns">
+                            <a class="download" href="#"><label> </label>Login</a>
+                            <a class="view" href="#"><label> </label>Register</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <%= image_tag("slide.jpg", :alt => "") %>
+                <div class="caption text-center">
+                    <div class="slide-text-info">
+                        <h1>Introducing <span>Amazing app.</span></h1>
+                        <h2>Made to modify and use anywhere</h2>
+                        <div class="slide-text">
+                            <ul>
+                                <li><span> </span>More Amazing than the Amazing Spiderman </li>
+                                <li><span> </span>Approved by Kim K </li>
+                                <li><span> </span>#BreakTheInternet</li>
+                            </ul>
+                        </div>
+                        <div class="clearfix"> </div>
+                        <div class="big-btns">
+                            <a class="download" href="#"><label> </label>Login</a>
+                            <a class="view" href="#"><label> </label>Register</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="clearfix"> </div>
+    <!-----device----->
+    <div class="device-demo">
+        <%= image_tag("device-in-hand.png", :alt => "rss feed") %>
+    </div>
+    <!---//device----->
+    <!----- //End-slider---->
+</div>
+<!-----//header-section----->
+<!----features----->
+<div id="fea" class="features">
+    <div class="container">
+        <div class="section-head text-center">
+            <h3><span class="frist"> </span>AMAZING FEATURES<span class="second"> </span></h3>
+            <p>RankStar has everything that you are looking for in a rank tracking website and more!</p>
+        </div>
+        <!----features-grids----->
+        <div class="features-grids">
+            <div class="col-md-4 features-grid">
+                <div class="features-grid-info">
+                    <div class="col-md-2 features-icon">
+                        <span class="f-icon0"> </span>
+                    </div>
+                    <div class="col-md-10 features-info">
+                        <h4>Graphs</h4>
+                        <p>Display your website ranking in beautiful graphs</p>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="features-grid-info">
+                    <div class="col-md-2 features-icon">
+                        <span class="f-icon1"> </span>
+                    </div>
+                    <div class="col-md-10 features-info">
+                        <h4>Comparing Results</h4>
+                        <p>Compare the results of multiple websites based on the same keyword</p>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="features-grid-info">
+                    <div class="col-md-2 features-icon">
+                        <span class="f-icon2"> </span>
+                    </div>
+                    <div class="col-md-10 features-info">
+                        <h4>Keywords Marking</h4>
+                        <p>Mark popular keywords for easy tracking</p>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+
+            </div><!---end-features-grid---->
+            <div class="col-md-4 features-grid">
+                <div class="big-device">
+                    <%= image_tag("device.png", :alt => "feature demo") %>
+                </div>
+            </div><!---end-features-grid---->
+            <div class="col-md-4 features-grid">
+                <div class="features-grid-info">
+                    <div class="col-md-2 features-icon1">
+                        <span class="f-icon3"> </span>
+                    </div>
+                    <div class="col-md-10 features-info">
+                        <h4>Keywords Register</h4>
+                        <p>Register more keywords with less money</p>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="features-grid-info">
+                    <div class="col-md-2 features-icon1">
+                        <span class="f-icon4"> </span>
+                    </div>
+                    <div class="col-md-10 features-info">
+                        <h4>Free!!</h4>
+                        <p>Our website is totally free, just sign up and enjoy the service</p>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="features-grid-info">
+                    <div class="col-md-2 features-icon1">
+                        <span class="f-icon5"> </span>
+                    </div>
+                    <div class="col-md-10 features-info">
+                        <h4>We need you!</h4>
+                        <p>Donate money so our website can function properly</p>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+
+            </div><!---end-features-grid---->
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <!----//features-grids----->
+    <!----//features----->
+    
+
+    <!----team---->
+    <div id="about" class="team">
+        <div class="container">
+            <div class="section-head text-center">
+                <h3><span class="frist"> </span>PEOPLE BEHIND THE WEBSITE<span class="second"> </span></h3>
+                <p>These people are awesome, give them a kiss!</p>
+            </div>
+        </div>
+        <!----team-members---->
+        <div class="team-members">
+            <div class="container">
+                <div class="col-md-3 team-member">
+                    <div class="team-member-info">
+                        <%= image_tag("team-member4.jpg", :alt => "name",:class => "member-pic") %>
+
+                        <h5><a href="#">Nguyen Quang Ha</a></h5>
+                        <span>Lead Designer</span>
+                        <label class="team-member-caption text-center">
+                            <p>Drink all day Party all night</p>
+                            <ul>
+                                <li><a class="t-twitter" href="https://twitter.com/Boyofthunder26"><span> </span></a></li>
+                                <li><a class="t-facebook" href="https://www.facebook.com/boyofthunder"><span> </span></a></li>
+                                <li><a class="t-googleplus" href="https://plus.google.com/+HàBoyofthunder"><span> </span></a></li>
+                                <div class="clearfix"> </div>
+                            </ul>
+                        </label>
+                    </div>
+                </div><!--- end-team-member --->
+                <div class="col-md-3 team-member">
+                    <div class="team-member-info">
+                        <%= image_tag("team-member1.jpg", :alt => "name",:class => "member-pic") %>
+                        <h5><a href="#">Tran Vu Long</a></h5>
+                        <span>Lead Developer</span>
+                        <label class="team-member-caption text-center">
+                            <p>Coolest Bartender of all time</p>
+                            <ul>
+                                <li><a class="t-twitter" href="#"><span> </span></a></li>
+                                <li><a class="t-facebook" href="https://www.facebook.com/long.trum"><span> </span></a></li>
+                                <li><a class="t-googleplus" href="#"><span> </span></a></li>
+                                <div class="clearfix"> </div>
+                            </ul>
+                        </label>
+                    </div>
+                </div><!--- end-team-member --->
+                <div class="col-md-3 team-member">
+                    <div class="team-member-info">
+                        <%= image_tag("team-member2.jpg", :alt => "name",:class => "member-pic") %>
+                        <h5><a href="#">Nguyen Hai Anh</a></h5>
+                        <span>Artist</span>
+                        <label class="team-member-caption text-center">
+                            <p>I'm Fabulous!</p>
+                            <ul>
+                                <li><a class="t-twitter" href="#"><span> </span></a></li>
+                                <li><a class="t-facebook" href="https://www.facebook.com/haris.sunbae"><span> </span></a></li>
+                                <li><a class="t-googleplus" href="#"><span> </span></a></li>
+                                <div class="clearfix"> </div>
+                            </ul>
+                        </label>
+                    </div>
+                </div><!--- end-team-member --->
+                <div class="col-md-3 team-member">
+                    <div class="team-member-info">
+                        <%= image_tag("team-member3.jpg", :alt => "name",:class => "member-pic") %>
+                        <h5><a href="#">Bui The Nam</a></h5>
+                        <span>Photographer</span>
+                        <label class="team-member-caption text-center">
+                            <p>High as Fuck!</p>
+                            <ul>
+                                <li><a class="t-twitter" href="https://twitter.com/ShinyySmile"><span> </span></a></li>
+                                <li><a class="t-facebook" href="https://www.facebook.com/shinyysmile"><span> </span></a></li>
+                                <li><a class="t-googleplus" href="#"><span> </span></a></li>
+                                <div class="clearfix"> </div>
+                            </ul>
+                        </label>
+                    </div>
+                </div><!--- end-team-member --->
+                <div class="clearfix"> </div>
+            </div>
+            <div class="clearfix"> </div>
+            <!--//team-members---->
+        </div>
+    </div>
+    <!----//team---->
+    <div class="clearfix"> </div>
+    <!----people-says----->
+    <div class="test-monials text-center">
+        <div class="container">
+            <span><%= image_tag("icon1.png", :alt => "quit") %></span>
+            <script>
+                $(document).ready(function() {
+                    $("#owl-demo1").owlCarousel({
+                        items : 1,
+                        lazyLoad : true,
+                        autoPlay : true,
+                        itemsDesktop : 2
+                    });
+                });
+            </script>
+            <div id="owl-demo1" class="owl-carousel">
+                <div class="item">
+                    <p>This Website is the best, I would sell my whole company for whoever make this</p>
+                    <div class="quit-people">
+                        <%= image_tag("stevejobs.jpg", :alt => "name") %>
+                        <h4><a href="#"> Steve Jobs</a></h4>
+                        <span>CEO at APPLE</span>
+                    </div>
+                </div>
+                <div class="item">
+                    <p>I killed my ex because she said this website sucks</p>
+                    <div class="quit-people">
+                        <%= image_tag("kimjongun.jpg", :alt => "name") %>
+                        <h4><a href="#"> Kim Jong-un</a></h4>
+                        <span>Supreme Leader of North Korea</span>
+                    </div>
+                </div>
+                <div class="item">
+                    <p>Caesar like it, Caesar want you to like it too</p>
+                    <div class="quit-people">
+                        <%= image_tag("Dawn-Planet-Apes-Pictures.jpg", :alt => "name") %>
+                        <h4><a href="#"> Caesar</a></h4>
+                        <span>Leader of the Ape</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!----//people-says----->
+    <!-----FEATURED----->
+
+    <!-----FEATURED----->
+    <!-----getintouch----->
+    <div id="contact" class="getintouch">
+        <div class="container">
+            <div class="section-head text-center">
+                <h3><span class="frist"> </span>GET IN TOUCH<span class="second"> </span></h3>
+                <p>We will try to respond as soon as possible</p>
+            </div>
+            <!---->
+            <div class="col-md-9 getintouch-left">
+                <div class="contact-form col-md-10">
+                    <h3>Say hello!</h3>
+                    <form>
+                        <input type="text" placeholder="Name" required />
+                        <input type="text"  placeholder="Email" required />
+                        <textarea placeholder="Message" required /> </textarea>
+                        <input type="submit" value="Send message" />
+                    </form>
+                </div>
+                <ul class="footer-social-icons col-md-2 text-center">
+                    <li><a class="f-be" href="#"><span> </span></a></li>
+                    <li><a class="f-tw" href="#"><span> </span></a></li>
+                    <li><a class="f-db" href="#"><span> </span></a></li>
+                    <li><a class="f-ti" href="#"><span> </span></a></li>
+                    <li><a class="f-go" href="#"><span> </span></a></li>
+                    <div class="clearfix"> </div>
+                </ul>
+            </div>
+            <div class="col-md-2 getintouch-left">
+                <div class="footer-device">
+                  <%=image_tag("chart_area_up.png")%>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---//getintouch----->
+    <!-----footer----->
+    <div class="footer">
+        <div class="container">
+            <div class="footer-grids">
+                <div class="col-md-3 footer-grid about-info">
+                    <a href="#"><%= image_tag("logo.png", :alt => "logo") %></a>
+
+                    <p>Rank Star © 2014</p>
+                </div>
+                <div class="col-md-3 footer-grid subscribe">
+                    <h3>Subscribe </h3>
+                    <form>
+                        <input type="text" placeholder="" required />
+                        <input type="submit" value="" />
+                    </form>
+                    <p>Subscribe to receive notifications on upcoming events</p>
+                </div>
+                <div class="col-md-3 footer-grid explore">
+                    <h3>Services</h3>
+                    <ul class="col-md-6">
+                        <li><a href="#">Rank Tracking</a></li>
+                        <li><a href="#">Charting</a></li>
+                        <li><a href="#">Keywords Rating</a></li>
+                        <li><a href="#">Keywords Acquisition</a></li>
+                    </ul>
+                    <ul class="col-md-6">
+                        <li><a href="#">Themeforest</a></li>
+                        <li><a href="#">Microsoft</a></li>
+                        <li><a href="#">Google</a></li>
+                        <li><a href="#">Yahoo</a></li>
+                    </ul>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="col-md-3 footer-grid copy-right">
+                    <p>Eusmod tempor incididunt ut labore et dolore magna aliqua. ut labore et dolore magna aliqua. </p>
+                    <p class="copy">Template by <a href="http://w3layouts.com/">w3layouts</a></p>
+                </div>
+                <div class="clearfix"> </div>
+                <script type="text/javascript">
+                    $(document).ready(function() {
+                        /*
+                         var defaults = {
+                         containerID: 'toTop', // fading element id
+                         containerHoverID: 'toTopHover', // fading element hover id
+                         scrollSpeed: 1200,
+                         easingType: 'linear'
+                         };
+                         */
+
+                        $().UItoTop({ easingType: 'easeOutQuart' });
+
+                    });
+                </script>
+                <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+            </div>
+        </div>
+    </div>
+    <!---//footer----->
+
+<body>
+
 

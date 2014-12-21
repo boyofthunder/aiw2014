@@ -5,8 +5,6 @@ Rails.application.routes.draw do
 
   get 'home/index'
   get 'home/sample'
-
- 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -40,6 +38,9 @@ Rails.application.routes.draw do
   #     resource :seller
   #   end
 
+  resource :results do
+    resource :contents
+  end
   # Example resource route with more complex sub-resources:
   #   resources :products do
   #     resources :comments

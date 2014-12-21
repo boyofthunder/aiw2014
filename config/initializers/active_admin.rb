@@ -5,7 +5,8 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Aiw2014starter"
+
+  config.site_title = "Rank Tracking"
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
@@ -89,7 +90,6 @@ ActiveAdmin.setup do |config|
   # (within the application controller) to return the currently logged in user.
   config.current_user_method = :current_admin_user
 
-
   # == Logging Out
   #
   # Active Admin displays a logout link on each screen. These
@@ -108,7 +108,6 @@ ActiveAdmin.setup do |config|
   # Default:
   # config.logout_link_method = :get
 
-
   # == Root
   #
   # Set the action to call for the root path. You can set different
@@ -117,27 +116,25 @@ ActiveAdmin.setup do |config|
   # Default:
   # config.root_to = 'dashboard#index'
 
-
   # == Admin Comments
   #
   # This allows your users to comment on any resource registered with Active Admin.
   #
   # You can completely disable comments:
-  # config.allow_comments = false
+   config.comments = false
   #
   # You can disable the menu item for the comments index page:
-  # config.show_comments_in_menu = false
+   config.show_comments_in_menu = false
+
   #
   # You can change the name under which comments are registered:
   # config.comments_registration_name = 'AdminComment'
-
 
   # == Batch Actions
   #
   # Enable and disable Batch Actions
   #
   config.batch_actions = true
-
 
   # == Controller Filters
   #
@@ -146,11 +143,9 @@ ActiveAdmin.setup do |config|
   #
   # config.before_filter :do_something_awesome
 
-
   # == Setting a Favicon
   #
-  # config.favicon = '/assets/favicon.ico'
-
+   config.favicon = '/assets/favicon.ico'
 
   # == Removing Breadcrumbs
   #
@@ -159,7 +154,6 @@ ActiveAdmin.setup do |config|
   #
   # config.breadcrumb = false
 
-
   # == Register Stylesheets & Javascripts
   #
   # We recommend using the built in Active Admin layout and loading
@@ -167,23 +161,40 @@ ActiveAdmin.setup do |config|
   # and feel.
   #
   # To load a stylesheet:
-  #   config.register_stylesheet 'my_stylesheet.css'
+     config.register_stylesheet 'bootstrap.min.css'
+  config.register_stylesheet 'bootstrap-responsive.min.css'
+  config.register_stylesheet 'font-awesome.min.css'
+  config.register_stylesheet 'jquery-ui-1.10.3.full.min.css'
+  config.register_stylesheet 'ace-fonts.css'
+      config.register_stylesheet 'ace.min.css'
+
+  config.register_stylesheet 'ace-responsive.min.css'
+  config.register_stylesheet 'ace-skins.min.css'
+
+
+
+
+
+
   #
   # You can provide an options hash for more control, which is passed along to stylesheet_link_tag():
-  #   config.register_stylesheet 'my_print_stylesheet.css', :media => :print
+  #   config.register_stylesheet 'my_print_stylesheet.css', media: :print
   #
   # To load a javascript file:
   #   config.register_javascript 'my_javascript.js'
-
+config.register_javascript 'jquery-2.0.3.min.js'
+  config.register_javascript 'bootstrap.min.js'
+  config.register_javascript 'ace-extra.min.js'
+  config.register_javascript 'ace-elements.min.js'
+  config.register_javascript 'ace.min.js'
 
   # == CSV options
   #
   # Set the CSV builder separator
-  # config.csv_options = { :col_sep => ';' }
+  # config.csv_options = { col_sep: ';' }
   #
   # Force the use of quotes
-  # config.csv_options = { :force_quotes => true }
-
+  # config.csv_options = { force_quotes: true }
 
   # == Menu System
   #
@@ -191,6 +202,7 @@ ActiveAdmin.setup do |config|
   #
   # To change the default utility navigation to show a link to your website & a logout btn
   #
+
   #   config.namespace :admin do |admin|
   #     admin.build_menu :utility_navigation do |menu|
   #       menu.add label: "My Great Website", url: "http://www.mygreatwebsite.com", html_options: { target: :blank }
@@ -205,7 +217,6 @@ ActiveAdmin.setup do |config|
   #       menu.add label: "My Great Website", url: "http://www.mygreatwebsite.com", html_options: { target: :blank }
   #     end
   #   end
-
 
   # == Download Links
   #
@@ -228,21 +239,18 @@ ActiveAdmin.setup do |config|
   #
   #   end
 
-
   # == Pagination
   #
   # Pagination is enabled by default for all resources.
   # You can control the default per page count for all resources here.
   #
-  # config.default_per_page = 30
-
+   config.default_per_page = 10
 
   # == Filters
   #
-  # By default the index screen includes a “Filters” sidebar on the right
+  # By default the index screen includes a "Filters" sidebar on the right
   # hand side with a filter for each attribute of the registered model.
   # You can enable or disable them for all resources here.
   #
   # config.filters = true
-
 end
