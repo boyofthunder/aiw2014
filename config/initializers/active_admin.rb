@@ -161,12 +161,12 @@ ActiveAdmin.setup do |config|
   # and feel.
   #
   # To load a stylesheet:
-     config.register_stylesheet 'bootstrap.min.css'
+  config.register_stylesheet 'bootstrap.min.css'
   config.register_stylesheet 'bootstrap-responsive.min.css'
 
   config.register_stylesheet 'jquery-ui-1.10.3.full.min.css'
   config.register_stylesheet 'ace-fonts.css'
-      config.register_stylesheet 'ace.min.css'
+  config.register_stylesheet 'ace.min.css'
 
   config.register_stylesheet 'ace-responsive.min.css'
   config.register_stylesheet 'ace-skins.min.css'
@@ -182,7 +182,7 @@ ActiveAdmin.setup do |config|
   #
   # To load a javascript file:
   #   config.register_javascript 'my_javascript.js'
-config.register_javascript 'jquery-2.0.3.min.js'
+  config.register_javascript 'jquery-2.0.3.min.js'
   config.register_javascript 'bootstrap.min.js'
   config.register_javascript 'ace-extra.min.js'
   config.register_javascript 'ace-elements.min.js'

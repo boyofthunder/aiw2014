@@ -47,7 +47,8 @@ show do |content|
   end
 
   render partial: 'charts', locals:{
-
+                              title: content.title,
+                              url: content.url,
                               date: date.strftime("(%Y, %m, %d)"),
                               #date: dates,
                               data: data.to_json

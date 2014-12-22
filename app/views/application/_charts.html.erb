@@ -1,6 +1,7 @@
 <div id="chart_container" style="height: 350px; min-width: 310px"></div>
+<%= javascript_include_tag 'highstocks', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'highstocks/modules/exporting', 'data-turbolinks-track' => true %>
 <script type="text/javascript">
-    //<![CDATA[
     $(function () {
         $('#chart_container').highcharts('StockChart', {
             chart: {zoomType: 'x'},
@@ -18,15 +19,15 @@
             },
             navigator: {yAxis: {reversed: true}},
             yAxis: {reversed: true, min: 0, allowDecimals: false, title: {text: 'Rank'}},
-            title: {text: 'GUCCI - YouTube'},
+            title: {text: "<%= raw title %>"},
             subtitle: {text: ''},
             series: [{
-                name: "<%= raw date %>",
+                name: "<%= raw url %>",
                 data: <%= raw data %>,
                 pointStart: Date.UTC<%= raw date %>,
                 pointInterval: 3600 * 1000 * 24,
                 tooltip: {valueDecimals: 0, valuePrefix: 'No.'}
             },]
         });
-    });//]]>
+    });
 </script>

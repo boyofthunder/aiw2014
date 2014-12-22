@@ -9,4 +9,5 @@ class Keyword < ActiveRecord::Base
   # def index
   #   @keywords = Keyword.where(:admin_user_id => current_admin_user.id)
   # end
+
 end

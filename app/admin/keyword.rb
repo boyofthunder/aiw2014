@@ -1,5 +1,6 @@
 ActiveAdmin.register Keyword do
   actions :all, :except => [:edit]
+  before_filter :skip_sidebar!, :only => :index
   # controller do
   #   nested_belongs_to :admin_user
   #   def index
@@ -28,12 +29,29 @@ ActiveAdmin.register Keyword do
     #     format.html{ render layout: 'active_admin' }
     #   end
     # end
+    def member
+      @keyword = Keyword.where(:id => params[:id], :admin_user_id => current_admin_user.id).first!
+    end
+    def create
+      if !Keyword.where(:query =>params[:query], :admin_user_id => current_admin_user).first.nil?
+        @keyword = Keyword.new(params[:keyword])
+        @keyword.admin_user = current_admin_user
+        @keyword.status = true
+        @keyword.save
+        redirect_to admin_keywords_path, :notice => "Keyword is added!"
+      else
+        redirect_to new_admin_keyword_path, :alert => "Keyword has been existed!"
+      end
+    end
   end
   member_action :toggle, :method => :put do
     keyword = Keyword.find(params[:id])
     keyword.update_attribute(:status, keyword.status ^ true)
-    keyword.save
+    if keyword.save
     redirect_to admin_keywords_path, :notice => "Updated!"
+    else
+      redirect_to admin_keywords_path, :alert => "Error!"
+      end
   end
   collection_action :index, :method => :get do
 
@@ -48,6 +66,12 @@ ActiveAdmin.register Keyword do
     end
   end
 
+  form do |f|
+    f.inputs "Input New Keyword" do
+      f.input :query, :as  => :string
+    end
+    f.actions
+  end
   permit_params :id, :query, :admin_user, :status
   # def require_permission
   #   if :current_user != Keyword.find(params[:id]).admin_user
@@ -98,17 +122,22 @@ ActiveAdmin.register Keyword do
   show do
     h3 "Keyword:"+keyword.query
     if keyword.results.last.nil?
-
+      redirect_to admin_keyword_path(keyword), :alert => "No Result to show!"
     else
       @result = keyword.results.last
       table_for Content.where(:result_id => @result.id) do |content|
+        selectable_column
         column :rank
         column :url
         column :title
         column :description
         column :contents do |content|
-          link_to "View Chart", admin_keyword_content_path(keyword,content) if !content.nil?
-        end
+          if !content.nil?
+          link_to(fa_icon("line-chart").html_safe,
+              admin_keyword_content_path(keyword,content),
+              :class => "btn btn-small btn-info ")
+          end
+
       end
     end
 
@@ -134,4 +163,5 @@ ActiveAdmin.register Keyword do
   #   span keyword.id
   #   end
   # end
-end
+  end
+  end

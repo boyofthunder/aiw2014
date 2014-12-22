@@ -2,11 +2,11 @@
 <head>
     <title>RankStar - Your No.1 Website for Rank Tracking</title>
     <%= stylesheet_link_tag    'bootstrap', media: 'all', 'data-turbolinks-track' => true %>
-    <link rel="shortcut icon" href="../../assets/images/chart_area_up.png" />
+    <%= favicon_link_tag 'chart_area_up.png' %>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <%= javascript_include_tag 'jquery.min', 'data-turbolinks-track' => true %>
     <%= stylesheet_link_tag    'popuo-box', media: 'all', 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag    'home.css.scss', media: 'all', 'data-turbolinks-track' => true %>
+
 
     <!---- start-smoth-scrolling---->
     <%= javascript_include_tag 'move-top', 'data-turbolinks-track' => true %>
@@ -57,16 +57,16 @@
         <div class="container">
             <div class="top-header">
                 <div class="logo">
-                    <a href="#"><%=fa_icon "line-chart 5"%></a>
+                    <a href="#"><%=image_tag("logo.png")%></a>
                 </div>
                 <!----start-top-nav---->
                 <nav class="top-nav">
                     <ul class="top-nav">
-                        <li class="active"><a href="#home" class="scroll">Home </a></li>
-                        <li class="page-scroll"><a href="#fea" class="scroll">FEATURES</a></li>
-                        <li class="page-scroll"><a href="#gallery" class="scroll">Gallery</a></li>
-                        <li class="page-scroll"><a href="#about" class="scroll">About </a></li>
-                        <li class="contatct-active" class="page-scroll"><a href="#contact" class="scroll">Contact</a></li>
+                        <li class="active"><a href="#home" class="scroll"><%=fa_icon "home"%>Home </a></li>
+                        <li class="page-scroll"><a href="#fea" class="scroll"><%=fa_icon "gears"%>FEATURES</a></li>
+                        <li class="page-scroll"><a href="#gallery" class="scroll"><%=fa_icon "image"%>Gallery</a></li>
+                        <li class="page-scroll"><a href="#about" class="scroll"><%=fa_icon "angellist"%>About </a></li>
+                        <li class="contatct-active" class="page-scroll"><a href="#contact" class="scroll"><%=fa_icon "phone"%>Contact</a></li>
                     </ul>
                     <a href="#" id="pull"><%= image_tag("nav-icon.png", :alt => "menu") %></a>
                 </nav>
@@ -117,8 +117,9 @@
                         </div>
                         <div class="clearfix"> </div>
                         <div class="big-btns">
-                            <a class="download" href="#"><label> </label>Login</a>
-                            <a class="view" href="#"><label> </label>Register</a>
+
+                          <%=link_to "<label></label>Login".html_safe,new_admin_user_session_path,:class=> "Download"%>
+                            <%=link_to "<label></label>Register".html_safe,new_admin_user_session_path,:class=> "view"%>
                         </div>
                     </div>
                 </div>
@@ -138,8 +139,8 @@
                         </div>
                         <div class="clearfix"> </div>
                         <div class="big-btns">
-                            <a class="download" href="#"><label> </label>Login</a>
-                            <a class="view" href="#"><label> </label>Register</a>
+                          <%=link_to "<label></label>Login".html_safe,new_admin_user_session_path,:class=> "Download"%>
+                          <%=link_to "<label></label>Register".html_safe,new_admin_user_session_path,:class=> "view"%>
                         </div>
                     </div>
                 </div>
@@ -159,8 +160,8 @@
                         </div>
                         <div class="clearfix"> </div>
                         <div class="big-btns">
-                            <a class="download" href="#"><label> </label>Login</a>
-                            <a class="view" href="#"><label> </label>Register</a>
+                          <%=link_to "<label></label>Login".html_safe,new_admin_user_session_path,:class=> "Download"%>
+                          <%=link_to "<label></label>Register".html_safe,new_admin_user_session_path,:class=> "view"%>
                         </div>
                     </div>
                 </div>
@@ -180,8 +181,8 @@
                         </div>
                         <div class="clearfix"> </div>
                         <div class="big-btns">
-                            <a class="download" href="#"><label> </label>Login</a>
-                            <a class="view" href="#"><label> </label>Register</a>
+                          <%=link_to "<label></label>Login".html_safe,new_admin_user_session_path,:class=> "Download"%>
+                          <%=link_to "<label></label>Register".html_safe,new_admin_user_session_path,:class=> "view"%>
                         </div>
                     </div>
                 </div>
@@ -425,7 +426,7 @@
             <div class="col-md-9 getintouch-left">
                 <div class="contact-form col-md-10">
                     <h3>Say hello!</h3>
-                    <form>
+                  <form action="MAILTO:hk.shinysmile@gmail.com" method="post" enctype="text/plain">
                         <input type="text" placeholder="Name" required />
                         <input type="text"  placeholder="Email" required />
                         <textarea placeholder="Message" required /> </textarea>
@@ -461,7 +462,7 @@
                 </div>
                 <div class="col-md-3 footer-grid subscribe">
                     <h3>Subscribe </h3>
-                    <form>
+                  <form>
                         <input type="text" placeholder="" required />
                         <input type="submit" value="" />
                     </form>

@@ -1,8 +1,22 @@
 ActiveAdmin.register AdminUser do
 menu false
   permit_params :email, :password, :password_confirmation
+actions :all,:except => [:destroy,:index]
+controller do
+  def resource
+    @admin_user = current_admin_user
+  end
+end
 
-
+show do |admin|
+  attributes_table do
+    row :email
+    row "Last Signed:" do
+      admin.last_sign_in_at
+    end
+    row :created_at
+  end
+end
   index do
     selectable_column
     id_column

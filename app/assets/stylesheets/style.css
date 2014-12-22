@@ -444,7 +444,7 @@ nav a#pull {
 .big-btns a label{
 	width: 40px;
 	height: 34px;
-	background: url(../images/btn-icons.png) no-repeat 0px 0px;
+	background: url(btn-icons.png) no-repeat 0px 0px;
 	display: inline-block;
 	vertical-align: middle;
 	margin-right:0.5em;
@@ -506,7 +506,7 @@ span.second{
 	width:40px;
 	height:40px;
 	display:inline-block;
-	background:url(../images/feature-icons-l.png) no-repeat 0px 0px;
+	background:url(feature-icons-l.png) no-repeat 0px 0px;
 	margin-top:1em;
 }
 .features-icon span.f-icon1{
@@ -532,7 +532,7 @@ span.second{
 	width:40px;
 	height:40px;
 	display:inline-block;
-	background:url(../images/feature-icons-r.png) no-repeat -13px 0px;
+	background:url(feature-icons-r.png) no-repeat -13px 0px;
 	margin-top:1em;
 }
 .features-icon1 span.f-icon4{
@@ -616,7 +616,7 @@ span.second{
 	width:40px;
 	height:40px;
 	display:inline-block;
-	background:url(../images/team-social.png) no-repeat 0px 0px; 
+	background:url(team-social.png) no-repeat 0px 0px;
 }
 .team-member-caption ul{
 	margin:2em 0 0 0;
@@ -698,7 +698,7 @@ span.second{
 	resize:none;
 }
 .contact-form input[type="submit"]{
-	background: url(../images/msg-icon.png) no-repeat 0px 0px;
+	background: url(msg-icon.png) no-repeat 0px 0px;
 	height: 23px;
 	width: 167px;
 	display: block;
@@ -731,7 +731,7 @@ span.second{
 	width:27px;
 	height:27px;
 	display:inline-block;
-	background:url(../images/social-icons.png) no-repeat 0px 0px;
+	background:url(social-icons.png) no-repeat 0px 0px;
 }
 .footer-social-icons li a:hover{
 	opacity:0.8;
@@ -773,7 +773,7 @@ span.second{
 	width: 18px;
 	height: 13px;
 	display: inline-block;
-	background: url(../images/arrow-2.png) no-repeat 0px 0px;
+	background: url(arrow-2.png) no-repeat 0px 0px;
 	border: none;
 	outline: none;
 	position: absolute;
@@ -825,7 +825,7 @@ p.copy a:hover{
 	height: 40px;
 	border: none;
 	text-indent: 100%;
-	background: url("../images/to-top1.png") no-repeat 0px 0px;
+	background: url(to-top1.png) no-repeat 0px 0px;
 	border-radius: 30em;
 }
 #toTopHover {
